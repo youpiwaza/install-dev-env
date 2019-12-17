@@ -2,6 +2,9 @@
 
 Histoire de partir sur de bonnes bases. Basé sur windows > ubuntu linux base shell
 
+EDIT: Avant de tout se taper, jeter un oeil à [MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html) > Utilitaire de terminal multiple windows, avec pas mal de trucs cool de base. Je l'utilise quand même pour le multi-onglet et les opérations d'avant ne sont pas perdues ; mais pas forcément indispensables..
+
+
 *Lexique*
 
 - WLS / Windows Linux Subsystem (Ubuntu "natif" sur windows)
@@ -40,6 +43,8 @@ Récupération de la commande en one shot (dans l'onglet README) qui comporte l'
 
 // FONTS KO
 
+![FONTS KO](/docs/images/Custom-WSL-terminal-1-police.jpg)
+
 
 
 ## Installer les polices pour le terminal WLS
@@ -57,22 +62,41 @@ DejaVuSansMono, reco par le mec ansible // **La seule qui marche sur 4-5 de test
 ~~Meslo LG M, thème reco OMZ~~ // KO Parce que nique la logique
 ~~Source code + FA~~ // KO
 
-2. Installation pour windows, via le registre..
-
-*(Accès au registre > Windows "demarrer" > Taper "Registr"..)*
+2. Installer de manière régulière
 
 - Télécharger [les polices](https://github.com/powerline/fonts) via github
 - Extraire > Installer
+
+![Telecharger et installer font sur windows](/docs/images/Custom-WSL-terminal-2-police.jpg)
+
+3. Installation pour windows, via le registre..
+
+*(Accès au registre > Windows "demarrer" > Taper "Registr"..)*
+
 - Editeur de registre > Ordinateur\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
 	- Récupérer le nom de la police, sans (TrueType), ex: "DejaVu Sans Mono for Powerline" (C/C depuis Registre > Renommer)
+
+![Récupérer le nom dans le registre](/docs/images/Custom-WSL-terminal-4-police.jpg)
+
 - Editeur de registre > Ordinateur\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont
 	- Nouvelle entrée > 00 (ou 000, 0000, 00000, etc. si déjà pris)
 	- "DejaVu Sans Mono for Powerline"
-- Rebooter le pc
+	
+![Ajouter aux polices disponibles pour la console](/docs/images/Custom-WSL-terminal-5-police.jpg)
 
-3. Utilisation dans WLS
+- **Rebooter le pc**
+
+4. Utilisation dans WLS
 
 - WLS > Barre du haut > Clic droit > Propriétés > Polices > "DejaVu Sans Mono for Powerline"
+
+
+![WLS > Barre titre > Clic droit](/docs/images/Custom-WSL-terminal-6-police.jpg)
+
+![WLS > Onglet police > Choix](/docs/images/Custom-WSL-terminal-7-police.jpg)
+
+![yay](/docs/images/Custom-WSL-terminal-8-police.jpg)
+
 - yay
 
 
@@ -130,7 +154,13 @@ A éditer à la main à partir des sources ([theme solarized](https://ethanschoo
 
 Ou sinon un mec l'a déjà fait en édition 1 clic : [solarized for windaube](https://github.com/nsilvestri/solarized-dark-for-wsl).
 
+![Couleurs solarized](/docs/images/Custom-WSL-terminal-9-couleurs.jpg)
+
 Possibilité de fixer de la transparence également.
+
+![Final agnoster](/docs/images/Custom-WSL-terminal-final-agnoster.jpg)
+
+*Exemple final avec thème OMZ agnoster*
 
 
 ### Optionnel > theme Powerlevel10k
@@ -147,26 +177,55 @@ Relancer terminal, et suivre l'installation de la configuration.
 
 Valider.
 
+![Final Powerlevel 10k](/docs/images/Custom-WSL-terminal-final-Powerlevel10k.jpg)
 
 
 
+## Onglets multiples & autres
+
+Ajouter l'icône WSL à la barre des tâches, clic droit > ubuntu. Cela ouvre une nouvelle instance (Mais pas un nouvel onglet).
+
+---
+
+MobaXterm > Utilitaire de terminal multiple windows, avec pas mal de commandes de base
+
+- [SO / Multiple terminal windows in Windows Ubuntu?](https://askubuntu.com/a/1142676)
+- [MobaXterm / Blog release 9.0](https://blog.mobatek.net/post/mobaxterm-new-release-9.0/) / Utilitaire windows anti cancer
+- [MobaXterm / Téléchargement](https://mobaxterm.mobatek.net/download-home-edition.html) / Installer edition
+
+Une fois installé, configurer une session WSL/Ubuntu par défaut :
+
+- Supprimer la session par défaut
+- Session > WSL > Ubuntu
+
+![Session > WSL > Ubuntu](/docs/images/MobaXterm-1-creer-session.jpg)
+
+![Nommer in Bookmark settings](/docs/images/MobaXterm-2-creer-session.jpg)
+
+- Nommer in Bookmark settings
+
+![Yay](/docs/images/MobaXterm-3-creer-session.jpg)
 
 
+### Fixer le répertoire par défaut
+
+Onglet macro > enregistrer
+
+![Nouvelle macro](/docs/images/MobaXterm-4-macro-cd.jpg)
+
+> cd /mnt/c/Users/XXXX/CheminVersProjets
+
+- Arreter l'enregistrement
+- Nommer
+- Onglet session > (la session créée ci-dessus) > clic droit > edit session > Advanced SWL settings > execute macro > choisir la macro
+
+![Modifier la session](/docs/images/MobaXterm-5-macro-cd.jpg)
+
+- Tester
+
+![Ajouter la macro par defaut](/docs/images/MobaXterm-6-macro-cd.jpg)
 
 
+#### Plein le q
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
+![fin](/docs/images/fin.jpg)
