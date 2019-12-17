@@ -228,4 +228,6 @@ Onglet macro > enregistrer
 
 #### Plein le q
 
+*Après pas mal de galères..*
+
 ![fin](/docs/images/fin.jpg)
