@@ -2,9 +2,11 @@
 
 Durée : ~30mn-1h.
 
+Todo : Possibilité de le convertir en installation 1 clic via Ansible, cf. [l'installation du terminal](https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh).
+
 **Attention** : Même si maintenant c'est rarement un problème, vérifier que vous avez quelques Go de disponibles sur le disque d'installation.
 
-1. Installation du [Linux pour Windows](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+1. [Linux pour Windows](/README.md) déjà installé
 2. Installer [Docker desktop](https://docs.docker.com/docker-for-windows/install/)
 
 ## Faire marcher Docker et ses potes avec WSL
