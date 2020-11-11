@@ -16,7 +16,7 @@ Récupération de la commande en one shot (dans l'onglet README) qui comporte l'
 
 // FONTS KO
 
-![FONTS KO](/install-dev-env/docs/images/Custom-WSL-terminal-1-police.jpg)
+![FONTS KO](../docs/images/Custom-WSL-terminal-1-police.jpg)
 
 ## Installer les polices pour le terminal WLS
 
@@ -38,7 +38,7 @@ DejaVuSansMono, reco par le mec ansible // **La seule qui marche sur 4-5 de test
 - Télécharger [les polices](https://github.com/powerline/fonts) via github
 - Extraire > Installer
 
-![Telecharger et installer font sur windows](/install-dev-env/docs/images/Custom-WSL-terminal-2-police.jpg)
+![Telecharger et installer font sur windows](../docs/images/Custom-WSL-terminal-2-police.jpg)
 
 ### Installation pour windows, via le registre
 
@@ -47,13 +47,13 @@ DejaVuSansMono, reco par le mec ansible // **La seule qui marche sur 4-5 de test
 - Editeur de registre > Ordinateur\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
   - Récupérer le nom de la police, sans (TrueType), ex: "DejaVu Sans Mono for Powerline" (C/C depuis Registre > Renommer)
 
-![Récupérer le nom dans le registre](/install-dev-env/docs/images/Custom-WSL-terminal-4-police.jpg)
+![Récupérer le nom dans le registre](../docs/images/Custom-WSL-terminal-4-police.jpg)
 
 - Editeur de registre > Ordinateur\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont
   - Nouvelle entrée > 00 (ou 000, 0000, 00000, etc. si déjà pris)
   - "DejaVu Sans Mono for Powerline"
 
-![Ajouter aux polices disponibles pour la console](/install-dev-env/docs/images/Custom-WSL-terminal-5-police.jpg)
+![Ajouter aux polices disponibles pour la console](../docs/images/Custom-WSL-terminal-5-police.jpg)
 
 - **Rebooter le pc**
 
@@ -61,11 +61,11 @@ DejaVuSansMono, reco par le mec ansible // **La seule qui marche sur 4-5 de test
 
 - WLS > Barre du haut > Clic droit > Propriétés > Polices > "DejaVu Sans Mono for Powerline"
 
-![WLS > Barre titre > Clic droit](/install-dev-env/docs/images/Custom-WSL-terminal-6-police.jpg)
+![WLS > Barre titre > Clic droit](../docs/images/Custom-WSL-terminal-6-police.jpg)
 
-![WLS > Onglet police > Choix](/install-dev-env/docs/images/Custom-WSL-terminal-7-police.jpg)
+![WLS > Onglet police > Choix](../docs/images/Custom-WSL-terminal-7-police.jpg)
 
-![yay](/install-dev-env/docs/images/Custom-WSL-terminal-8-police.jpg)
+![yay](../docs/images/Custom-WSL-terminal-8-police.jpg)
 
 - yay
 
@@ -118,11 +118,11 @@ A éditer à la main à partir des sources ([theme solarized](https://ethanschoo
 
 Ou sinon un mec l'a déjà fait en édition 1 clic : [solarized for windaube](https://github.com/nsilvestri/solarized-dark-for-wsl).
 
-![Couleurs solarized](/install-dev-env/docs/images/Custom-WSL-terminal-9-couleurs.jpg)
+![Couleurs solarized](../docs/images/Custom-WSL-terminal-9-couleurs.jpg)
 
 Possibilité de fixer de la transparence également.
 
-![Final agnoster](/install-dev-env/docs/images/Custom-WSL-terminal-final-agnoster.jpg)
+![Final agnoster](../docs/images/Custom-WSL-terminal-final-agnoster.jpg)
 
 *Exemple final* avec thème OMZ agnoster
 
@@ -142,7 +142,7 @@ Relancer terminal, et suivre l'installation de la configuration.
 
 Valider.
 
-![Final Powerlevel 10k](/install-dev-env/docs/images/Custom-WSL-terminal-final-Powerlevel10k.jpg)
+![Final Powerlevel 10k](../docs/images/Custom-WSL-terminal-final-Powerlevel10k.jpg)
 
 ## Onglets multiples & autres
 
@@ -163,19 +163,19 @@ Une fois installé, configurer une session WSL/Ubuntu par défaut :
 - Supprimer la session par défaut
 - Session > WSL > Ubuntu
 
-![Session > WSL > Ubuntu](/install-dev-env/docs/images/MobaXterm-1-creer-session.jpg)
+![Session > WSL > Ubuntu](../docs/images/MobaXterm-1-creer-session.jpg)
 
-![Nommer in Bookmark settings](/install-dev-env/docs/images/MobaXterm-2-creer-session.jpg)
+![Nommer in Bookmark settings](../docs/images/MobaXterm-2-creer-session.jpg)
 
 - Nommer in Bookmark settings
 
-![Yay](/install-dev-env/docs/images/MobaXterm-3-creer-session.jpg)
+![Yay](../docs/images/MobaXterm-3-creer-session.jpg)
 
 ### Fixer le répertoire par défaut
 
 Onglet macro > enregistrer
 
-![Nouvelle macro](/install-dev-env/docs/images/MobaXterm-4-macro-cd.jpg)
+![Nouvelle macro](../docs/images/MobaXterm-4-macro-cd.jpg)
 
 > cd /mnt/c/Users/XXXX/CheminVersProjets
 
@@ -183,14 +183,14 @@ Onglet macro > enregistrer
 - Nommer
 - Onglet session > (la session créée ci-dessus) > clic droit > edit session > Advanced SWL settings > execute macro > choisir la macro
 
-![Modifier la session](/install-dev-env/docs/images/MobaXterm-5-macro-cd.jpg)
+![Modifier la session](../docs/images/MobaXterm-5-macro-cd.jpg)
 
 - Tester
 
-![Ajouter la macro par defaut](/install-dev-env/docs/images/MobaXterm-6-macro-cd.jpg)
+![Ajouter la macro par defaut](../docs/images/MobaXterm-6-macro-cd.jpg)
 
 #### Plein le q
 
 *Après pas mal de galères..*
 
-![fin](/install-dev-env/docs/images/fin.jpg)
+![fin](../docs/images/fin.jpg)
