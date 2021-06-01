@@ -12,17 +12,22 @@ Installation complète d'un environnement de dev sous Windows.
 
 ## Installer ubuntu pour windows
 
-- [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-  - [MS store ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6)
+- [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
+- [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/fr-fr/windows/wsl/install-win10)
+  - [MS store ubuntu](https://www.microsoft.com/fr-fr/p/ubuntu-2004-lts/9n6svws3rx71)
 
 1. Télécharger
 2. Lancer
 3. Choisir username & password
 4. [Mise à jour de l'OS](sudo apt update && sudo apt upgrade) / Maj & update package list
 
-> sudo apt update && sudo apt upgrade
+```bash
+# Mettre à jour la liste des paquets, puis mettre à jour les paquets
+#   Note: Ca prend un peu de temps mais besoin de confirmer avec "Y" alors attention
+sudo apt update && sudo apt upgrade
+```
 
-## Installation du terminal
+## Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
 
 [Readme dédié](01-terminal/README.md)
 

@@ -1,4 +1,81 @@
-# Installer le terminal
+# Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
+
+ Installation du **terminal** *Oh My Zsh* et du **Thème** *PowerLevel10k*.
+
+Cay über rapide, pratique et joli.
+
+## Edit 06/2021 : Clean & concis 🐬
+
+Le script auto est pas mal mais il merde un poil. Voici les opérations résumées
+
+- Pré-installation des polices reco pour le thème : [ici](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+  - Télécharger & installer de manière classique (clic droit > installer).
+  - Terminal > clic droit sur la barre du haut > Propriétés > Police > MesloLGS.
+  - Redémarrer le terminal
+  - (Je reco une taille de police de 16, et d'en profiter pour régler la taille par défaut de la fenêtre afin de permettre d'afficher de multiples terminaux)
+- Changement automatique des couleurs pour [solarized dark](https://github.com/youpiwaza/backup-solarized-dark-for-wsl) (~maj des registres en RGB).
+  - Cloner, lancer `install.vbs`, relancer le terminal.
+
+```bash
+## Edit 2021: En cas de réinsatllation/mise à jour de ubuntu (avec les fichiers ~/.zshrc partagés -_-)
+## Supprimer les fichiers avant de faire la manip, sinon l'installation via le script ne se fera pas correctement
+##   Pas de conf lors de la relance du terminal ; A noter que ça pète la conf précédente !
+##   ..Mais sera remise en place via install du terminal, faites juste gaffe si conf a la mano (raccourcis, etc.).
+
+## Supprimer la conf de zsh
+# rm ~.zsh*
+
+## Éxécuter le script auto / doc : https://galaxy.ansible.com/viasite-ansible/zsh > onglet README
+# curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
+## Le .zshrc semble merdique avec ^ Est-ce que ça sert à quelque chose ?
+
+## Terminal Oh My Zsh, installation officielle / https://github.com/ohmyzsh/ohmyzsh#basic-installation
+# OMZ > curl install
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+## (Manual update OMZ)
+# omz update
+
+
+
+## Theme powerlevel10k official installation for OMZ / https://github.com/romkatv/powerlevel10k#oh-my-zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+## Forcer le thème
+nano ~/.zshrc
+
+## Maj dans le fichier la variable du thème
+# >> # ZSH_THEME="robbyrussell"
+# >> ZSH_THEME="powerlevel10k/powerlevel10k"
+
+## Redémarrer le terminal, un questionnaire doit s'afficher
+# (...)
+
+## Sinon, lancer le questionnaire
+# p10k configure
+
+## (Manual update / theme)
+# git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
+```
+
+Remplir le questionnaire selon les préférences. Profit.
+
+### Notes
+
+- Plutôt que de partir d'un mec qui en parle, utiliser leS vraiS repoS
+  - du terminal [OMZ](https://github.com/ohmyzsh/ohmyzsh)
+  - du theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k).
+- Je laisse les anciennes notes en cas de problème..
+- Le terminal est lent AF après l'install du script ansible, mais c'est corrigé via le theme PL10K
+  - Note c'est même putain de rapide, plus de soucis d'inputs mangés ou quoi ; cf [demo](https://asciinema.org/a/NHRjK3BMePw66jtRVY2livHwZ).
+- Le thème dispose également d'une chiée d'[options de base](https://github.com/romkatv/powerlevel10k#batteries-included), relatives au confort, voir a différents langages, env. de dev/prod, etc. mais également de plugins.
+- Je devais être fin claqué/au bout de ma vie lors de la première installation lel
+
+---
+---
+---
+
+## Old 👴💩
 
 Choix porté sur zsh/oh-my-zsh & tmux
 
@@ -9,7 +86,8 @@ Choix d'un repo avec une bonne pertinence [zsh repo + oh-my + theme](https://gal
 Récupération de la commande en one shot (dans l'onglet README) qui comporte l'installation d'ansible et tout x)
 
 ```bash
-> curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
+# Éxécuter le script auto
+curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
 ```
 
 **Important** : Relancer le terminal
@@ -102,11 +180,13 @@ Les deux ont les trucs git et tout. je reste sur PL10k car le chemin des dossier
 - "i" pour insérer/modifier du texte, puis échap pour revenir au mod normal
 - ":wq" / sauvegarder et quitter
 
-> ~~sudo cp ~/.zshrc /etc/zshrc.local~~
-> ~~sudo vi /etc/zshrc.local~~
-> ~~sudo cp ~/.zshrc ~/.zshrc.local~~
-> ~~sudo vi ~/.zshrc.local~~
-> sudo vi ~/.zshrc
+```bash
+# KO / sudo cp ~/.zshrc /etc/zshrc.local
+# KO / sudo vi /etc/zshrc.local
+# KO / sudo cp ~/.zshrc ~/.zshrc.local
+# KO / sudo vi ~/.zshrc.local
+sudo vi ~/.zshrc
+```
 
 Remplacer `ZSH_THEME="robbyrussell"` par `ZSH_THEME="agnoster"`, avec vi.
 
