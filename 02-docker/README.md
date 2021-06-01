@@ -2,7 +2,7 @@
 
 Durée : ~30mn-1h.
 
-Todo : Possibilité de le convertir en installation 1 clic via Ansible, cf. [l'installation du terminal](https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh).
+TODO: Maj installation de docker, la doc à changé.
 
 **Attention** : Même si maintenant c'est rarement un problème, vérifier que vous avez quelques Go de disponibles sur le disque d'installation.
 
@@ -19,11 +19,11 @@ Basé sur cet [excellent article](https://nickjanetakis.com/blog/setting-up-dock
 
 ### Installation de Docker
 
-Installation de docker (ce), utiliser la [documentation officielle](https://docs.docker.com/install/linux/docker-ce/ubuntu/), qui est maintenue.
+Installation de docker (ce), 🚨utiliser la [documentation officielle](https://docs.docker.com/install/linux/docker-ce/ubuntu/)🚨, qui est maintenue.
 
 *Notes* :
 
-- Ce code est peut être obsolète, vérifier sur la doc.
+- Ce code est peut être 💩obsolète💩, vérifier sur la doc.
 - Je rajoute l'ensemble des lignes de code par convénience (réinstallation), les explications approfondies seront sur les pages citées :)
 
 ```bash
