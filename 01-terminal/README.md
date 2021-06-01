@@ -6,7 +6,7 @@ Cay über rapide, pratique et joli.
 
 ## Edit 06/2021 : Clean & concis 🐬
 
-Le script auto est pas mal mais il merde un poil. Voici les opérations résumées
+Voici les opérations résumées à partir des repos offciels
 
 - Pré-installation des polices reco pour le thème : [ici](https://github.com/romkatv/powerlevel10k#manual-font-installation)
   - Télécharger & installer de manière classique (clic droit > installer).
@@ -25,16 +25,9 @@ Le script auto est pas mal mais il merde un poil. Voici les opérations résumé
 ## Supprimer la conf de zsh
 # rm ~.zsh*
 
-## Éxécuter le script auto / doc : https://galaxy.ansible.com/viasite-ansible/zsh > onglet README
-# curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
-## Le .zshrc semble merdique avec ^ Est-ce que ça sert à quelque chose ?
-
 ## Terminal Oh My Zsh, installation officielle / https://github.com/ohmyzsh/ohmyzsh#basic-installation
 # OMZ > curl install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-## (Manual update OMZ)
-# omz update
 
 
 
@@ -45,17 +38,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 nano ~/.zshrc
 
 ## Maj dans le fichier la variable du thème
-# >> # ZSH_THEME="robbyrussell"
-# >> ZSH_THEME="powerlevel10k/powerlevel10k"
+>> # ZSH_THEME="robbyrussell"
+>> ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ## Redémarrer le terminal, un questionnaire doit s'afficher
 # (...)
 
 ## Sinon, lancer le questionnaire
 # p10k configure
-
-## (Manual update / theme)
-# git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
 ```
 
 Remplir le questionnaire selon les préférences. Profit.
@@ -70,6 +60,16 @@ Remplir le questionnaire selon les préférences. Profit.
   - Note c'est même putain de rapide, plus de soucis d'inputs mangés ou quoi ; cf [demo](https://asciinema.org/a/NHRjK3BMePw66jtRVY2livHwZ).
 - Le thème dispose également d'une chiée d'[options de base](https://github.com/romkatv/powerlevel10k#batteries-included), relatives au confort, voir a différents langages, env. de dev/prod, etc. mais également de plugins.
 - Je devais être fin claqué/au bout de ma vie lors de la première installation lel
+
+### Mises à jour
+
+```bash
+## (Manual update OMZ)
+omz update
+
+## (Manual update / theme p10k)
+git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
+```
 
 ---
 ---
