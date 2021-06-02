@@ -24,8 +24,21 @@ Installation complète d'un environnement de dev sous Windows.
 
 ```bash
 ## Mettre à jour la liste des paquets/packages, puis mettre à jour les paquets
-##   Note: Ca prend un peu de temps mais besoin de confirmer avec "Y" vers le début
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y && sudo apt-get update && sudo apt-get install -y
+
+## Note: Vos DD/fichiers sont accessibles depuis la racine > mnt/
+# cd ../..
+cd /mnt/c
+ls -la
+# total 71688
+# drwxrwxrwx 1 youpiwaza youpiwaza      512 Jul  1  2018 '$Recycle.Bin'
+# drwxrwxrwx 1 youpiwaza youpiwaza      512 Jun  1 21:05  .
+# drwxr-xr-x 5 root      root          4096 Jun  1 21:14  ..
+# lrwxrwxrwx 1 youpiwaza youpiwaza       12 Jul  1  2018 'Documents and Settings' -> /mnt/c/Users
+# drwxrwxrwx 1 youpiwaza youpiwaza      512 Apr  6 08:40 'Program Files'
+# drwxrwxrwx 1 youpiwaza youpiwaza      512 Apr  8 10:16 'Program Files (x86)'
+# drwxrwxrwx 1 youpiwaza youpiwaza      512 Nov 30  2020  Users
+# drwxrwxrwx 1 youpiwaza youpiwaza      512 May 27 08:59  Windows
 ```
 
 ## Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
