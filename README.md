@@ -61,6 +61,66 @@ ubuntu2004 config --default-user root
 
 *Note* : Cela comprend l'installation d'Ansible grâce au script utilisé.
 
+## (Optionnel) Mise en place de connexion SSH depuis WSL
+
+Permet un accès direct au serveur depuis WSL. En gros partager les fichiers de clés de windows via un lien.
+
+WSL2 a besoin d'un peu plus de conf:
+
+- [SO / Ubuntu on windows 10 wsl2 - chown chmod doesn't work on copied files](https://stackoverflow.com/questions/63600692/ubuntu-on-windows-10-wsl2-chown-chmod-doesnt-work-on-copied-files)
+- ['crosoft > Sharing SSH keys between Windows and WSL 2](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/)
+- [old article, but see comments](https://florianbrinkmann.com/en/ssh-key-and-the-windows-subsystem-for-linux-3436/).
+
+```bash
+## Ajouter la gestion des metadatas à wsl
+nano /etc/wsl.conf
+```
+
+Rajouter dans la conf..
+
+```ini
+[automount]
+enabled = true
+options = "metadata,uid=1000,gid=1000,umask=0022,fmask=11,case=off"
+mountFsTab = false
+crossDistro = true
+
+[filesystem]
+umask = 0022
+
+[network]
+generateHosts = true
+generateResolvConf = true
+
+[interop]
+enabled = true
+appendWindowsPath = true
+```
+
+Puis redémarrer le terminal.
+
+```bash
+## Dossier de l'utilisateur courant
+cd
+
+## Création du lien symbolique vers les clés SSH windows
+ln -s /mnt/c/Users/WINDOWS_USER/.ssh ~/.ssh
+
+## Ajustement des droits
+chown UBUNTU_USER:UBUNTU_USER .ssh 
+chown UBUNTU_USER:UBUNTU_USER .ssh/*
+## Note: Si les clés ne sont pas chmod 600 (ou moins), c'est considéré comme une faille de sécurité et elles ne fonctionnent pas
+chmod 600 ~/.ssh/*
+
+ls -la
+# ...
+# lrwxrwxrwx  1 UBUNTU_USER UBUNTU_USER    26 Jun  2 11:49 .ssh -> /mnt/c/Users/WINDOWS_USER/.ssh
+```
+
+Note: Toujours pas de solution miracle pour connexion en 1 commande (`.ssh/config` redemande la passphrase systématiquement..)
+
+cf. [Repo dédié](https://github.com/youpiwaza/server-related-tutorials/tree/master/02-ansible/01-configuration-ssh) pour les détails.
+
 ## Installation de docker et ses potes
 
 [Readme dédié](02-docker/README.md)
