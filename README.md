@@ -41,6 +41,20 @@ ls -la
 # drwxrwxrwx 1 youpiwaza youpiwaza      512 May 27 08:59  Windows
 ```
 
+### (Optionnel) Switcher sur l'utilisateur root par défaut
+
+Parce que l'utilisateur normal peut déconner/merder au niveau de l'attribution des droits, et parce que `sudo` c'relou en local
+
+```bash
+## Depuis un INVITE DE COMMANDE WINDOWS, lancé en administrateur
+##    https://superuser.com/questions/1107986/how-to-sign-into-root-account-by-default-on-windows-subsystem-for-linux-bash-t#comment2465514_1291457
+## Ubuntu 18
+ubuntu config --default-user root
+
+## Ubuntu 20+
+ubuntu2004 config --default-user root
+```
+
 ## Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
 
 [Readme dédié](01-terminal/README.md)
