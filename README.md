@@ -124,3 +124,55 @@ cf. [Repo dédié](https://github.com/youpiwaza/server-related-tutorials/tree/ma
 ## Installation de docker et ses potes
 
 [Readme dédié](02-docker/README.md)
+
+## Recos supplémentaires de nick
+
+cf. l'[article correspondant](https://nickjanetakis.com/blog/the-tools-i-use).
+
+- [PowerToys](https://github.com/microsoft/PowerToys) / Plein d'utilitaires pour les tâches courantes / Alt + space > lancer un programme
+- 💖 [Ditto](https://ditto-cp.sourceforge.io/) / Copier collers multiples + recherche dans historique / [Setup avec terminal](https://nickjanetakis.com/blog/boosting-software-developer-productivity-with-a-clipboard-manager)
+
+### Maintenance docker & WSL
+
+#### Restreindre WSL2 en RAM
+
+[blah](https://youtu.be/idW-an99TAM?t=1515)
+
+```bash
+nano /mnt/c/Users/WINDOWS_USER/.wslconfig
+```
+
+Y ajouter
+
+```ini
+[wsl2]
+memory=6GB
+```
+
+Redémarrer WSL
+
+#### A la mano
+
+```bash
+## Docker > Remove everything not used, no need to confirm
+docker system prune -af
+```
+
+[WSL2](https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm)
+
+Powershell > run as admin
+
+```bash
+# Close all WSL terminals and run this to fully shut down WSL.
+## Notification > NON je ne veux pas redémarrer, pour le moment
+wsl.exe --shutdown
+
+# Replace Nick with your Windows user name. This is where Docker stores its VM file.
+cd C:\Users\WINDOWS_USER\AppData\Local\Docker\wsl\data\
+
+# Compact the Docker Desktop WSL VM file and you're done.
+# NOTE: This may not work with Windows Home edition (read below).
+optimize-vhd -Path .\ext4.vhdx -Mode full
+```
+
+Relancer docker desktop
