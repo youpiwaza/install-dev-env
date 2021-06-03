@@ -53,6 +53,13 @@ docker run -it \
 
 ![Test WSL2 > docker run > nginx](../docs/images/test-docker-nginx-ok.png)
 
+Note: En cas d'erreur `docker: Error response from daemon: Head [...] unauthorized: incorrect username or password.`
+
+```bash
+# Se connecter soit via docker desktop, doit via terminal ; avec identifiant dockerhub
+docker login --username TON_USERNAME_WESH
+```
+
 ---
 ---
 ---
