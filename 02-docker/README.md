@@ -86,11 +86,11 @@ Installation de docker (ce), 🚨utiliser la [documentation officielle](https://
 - Je rajoute l'ensemble des lignes de code par convénience (réinstallation), les explications approfondies seront sur les pages citées :)
 
 ```bash
-> sudo apt-get remove docker docker-engine docker.io containerd runc
+> sudo apt remove docker docker-engine docker.io containerd runc
 
-> sudo apt-get update
+> sudo apt update
 
-> sudo apt-get install \
+> sudo apt install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -104,9 +104,9 @@ Installation de docker (ce), 🚨utiliser la [documentation officielle](https://
    $(lsb_release -cs) \
    stable"
 
-> sudo apt-get update
+> sudo apt update
 
-> sudo apt-get install docker-ce docker-ce-cli containerd.io
+> sudo apt install docker-ce docker-ce-cli containerd.io
 
 > sudo usermod -aG docker $USER
 ```

@@ -24,7 +24,7 @@ Installation complète d'un environnement de dev sous Windows.
 
 ```bash
 ## Mettre à jour la liste des paquets/packages, puis mettre à jour les paquets
-sudo apt update && sudo apt upgrade -y && sudo apt-get update && sudo apt-get install -y
+sudo apt update && sudo apt -y upgrade
 
 ## Note: Vos DD/fichiers sont accessibles depuis la racine > mnt/
 # cd ../..
