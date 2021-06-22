@@ -73,6 +73,9 @@ omz update
 
 ## (Manual update / theme p10k)
 git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
+
+## (opt) Mettre à jour la liste des paquets/packages, puis mettre à jour les paquets
+sudo apt update && sudo apt -y upgrade
 ```
 
 ---
