@@ -55,6 +55,29 @@ ubuntu config --default-user root
 ubuntu2004 config --default-user root
 ```
 
+### (Optionnel) Installation des paquets usuels
+
+- NodeJs, npm, yarn
+- python
+
+```bash
+# Installations chainées
+echo "deb https://dl.yarnpkg.com/debian/ stable main" && \
+sudo apt update && \
+sudo apt -y install nodejs && \
+sudo apt -y install npm && \
+sudo apt -y install yarn && \
+sudo apt -y install software-properties-common && \
+sudo add-apt-repository ppa:deadsnakes/ppa -y && \
+sudo apt -y install python3.9
+
+# Vérifications
+echo "test node: " && nodejs -v && \
+echo "test npm: " && npm -v && \
+echo "test python3: " && python3.9 --version && \
+echo "test yarn: " && yarn --version
+```
+
 ## Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
 
 [Readme dédié](01-terminal/README.md)
