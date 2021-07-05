@@ -75,7 +75,10 @@ omz update
 git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull
 
 ## (opt) Mettre à jour la liste des paquets/packages, puis mettre à jour les paquets
-sudo apt update && sudo apt -y upgrade
+sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
+
+## One liner
+omz update && git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull && sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 ```
 
 ---
