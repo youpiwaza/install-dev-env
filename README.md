@@ -11,7 +11,7 @@ Installation complète d'un environnement de dev sous Windows.
 - OMZ / 💅 Oh-My-Zsh, moteur de thème pour ZSH ^
 - p10k / 🐲 Le thème *PowerLevel10k* pour OMZ
 
-## Installer ubuntu LTS pour windows 10
+## Installer (via WLS) ubuntu LTS pour windows 10
 
 - [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
 - [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/fr-fr/windows/wsl/install-win10)
@@ -21,6 +21,8 @@ Installation complète d'un environnement de dev sous Windows.
 2. Lancer
 3. Choisir username & password
 4. Mise à jour de l'OS
+
+Puis, sous le terminal nouvellement installé..
 
 ```bash
 ## Mettre à jour la liste des paquets/packages, puis mettre à jour les paquets
