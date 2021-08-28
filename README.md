@@ -159,6 +159,15 @@ cf. l'[article correspondant](https://nickjanetakis.com/blog/the-tools-i-use).
 
 ### Maintenance docker & WSL
 
+#### Maj Docker Desktop
+
+1. Lancer le bousin
+2. Attendre qu'il soit effectivement lancé
+3. Barre des tâches > Icône > Clic droit > ~"Check for updates"
+4. Attendre et lui tenir la main pendant approximativement 107 ans
+5. ..
+6. Profits
+
 #### Restreindre WSL2 en RAM
 
 [blah](https://youtu.be/idW-an99TAM?t=1515)
