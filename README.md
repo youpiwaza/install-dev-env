@@ -210,3 +210,7 @@ optimize-vhd -Path .\ext4.vhdx -Mode full
 ```
 
 Relancer docker desktop
+
+## Mise en place de l'éditeur de texte / VSCode
+
+[wesh](04-vscode/README.md)
