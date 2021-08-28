@@ -26,7 +26,7 @@ Puis, sous le terminal nouvellement installé..
 
 ```bash
 ## Mettre à jour la liste des paquets/packages, puis mettre à jour les paquets
-sudo apt update && sudo apt -y upgrade
+sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 
 ## Note: Vos DD/fichiers sont accessibles depuis la racine > mnt/
 # cd ../..
