@@ -13,6 +13,7 @@ Désactivez/désinstallez ceux dont vous ne servez pas
 - (Beautify)
 - ✨Better comments
 - Bookmarks
+- Bracket Pair Colorizer 2
 - 💥Change case
 - Code Spell Checker
   - French - Code Spell Checker // Besoin reboot & activation
@@ -24,7 +25,6 @@ Désactivez/désinstallez ceux dont vous ne servez pas
 - Markdown lint
 - Material Icon Theme
 - (Prettier formatter)
-- Rainbow Brackets 2
 - Theme [Jellyfish](https://marketplace.visualstudio.com/items?itemName=PawelBorkar.jellyfish&ssr=false#overview)
 - ✨Todo Tree
 - 💥Toggle Quotes
