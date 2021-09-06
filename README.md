@@ -214,3 +214,24 @@ Relancer docker desktop
 ## Mise en place de l'éditeur de texte / VSCode
 
 [wesh](04-vscode/README.md)
+
+## Troubleshootings / Problems
+
+### WSL Can't connect to the internet
+
+Can happen randomly..
+
+[SO Resource](https://stackoverflow.com/questions/62314789/no-internet-connection-on-wsl-ubuntu-windows-subsystem-for-linux)
+
+Run Cmd or Powershell as administrator
+
+You can check `/etc/resolv.conf` to assure IPs have changed after the manipulations (no point in manual edit IMO).
+
+```bash
+# No need to reboot if you shutdown WSL beforehand
+wsl --shutdown
+netsh winsock reset
+netsh int ip reset all
+netsh winhttp reset proxy
+ipconfig /flushdns
+```
