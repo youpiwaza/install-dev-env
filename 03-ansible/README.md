@@ -1,4 +1,4 @@
-# Instllation et utilisation d'Ansible
+# Installation et utilisation d'Ansible
 
 Récupération et amélioration du [script](https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh) trouvé lors de l'installation du terminal.
 
