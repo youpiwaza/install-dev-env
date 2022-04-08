@@ -18,7 +18,7 @@ Voici les opérations résumées à partir des repos officiels
   - Cloner, lancer `install.vbs`, relancer le terminal.
 
 ```bash
-## Edit 2021: En cas de réinsatllation/mise à jour de ubuntu (avec les fichiers ~/.zshrc partagés -_-)
+## Edit 2021: En cas de réinstallation/mise à jour de ubuntu (avec les fichiers ~/.zshrc partagés -_-)
 ## Supprimer les fichiers avant de faire la manip, sinon l'installation via le script ne se fera pas correctement
 ##   Pas de conf lors de la relance du terminal ; A noter que ça pète la conf précédente !
 ##   ..Mais sera remise en place via install du terminal, faites juste gaffe si conf a la mano (raccourcis, etc.).
