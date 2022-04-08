@@ -1,6 +1,6 @@
 # Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
 
- Installation du **terminal** *Oh My Zsh* et du **Thème** *PowerLevel10k*.
+Installation du **terminal** *Oh My Zsh* et du **Thème** *PowerLevel10k*.
 
 Cay über rapide, pratique et joli.
 

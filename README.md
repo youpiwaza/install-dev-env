@@ -13,14 +13,14 @@ Installation complète d'un environnement de dev sous Windows.
 
 ## Installer (via WLS) ubuntu LTS pour windows 10
 
-- [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
-- [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/fr-fr/windows/wsl/install-win10)
-  - [MS store ubuntu](https://www.microsoft.com/fr-fr/p/ubuntu-2004-lts/9n6svws3rx71)
+1. [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
 
-1. Télécharger
-2. Lancer
-3. Choisir username & password
-4. Mise à jour de l'OS
+Edit 2022 : nouvelle doc
+
+1. Passer les [pré-requis via Powershell](https://docs.microsoft.com/fr-fr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package), ne faire que les étapes 1 à 3
+2. [Installer WSL 2 via Powershell](https://docs.microsoft.com/fr-fr/windows/wsl/install)
+3. [Config alakon](https://docs.microsoft.com/fr-fr/windows/wsl/setup/environment) user & pass root
+4. Pour les mises à jour, passer par les recos habituelles, mon github > todo > tâches récurrentes, sinon ci-dessous
 
 Puis, sous le terminal nouvellement installé..
 
@@ -71,12 +71,12 @@ sudo apt -y install npm && \
 sudo apt -y install yarn && \
 sudo apt -y install software-properties-common && \
 sudo add-apt-repository ppa:deadsnakes/ppa -y && \
-sudo apt -y install python3.9
+sudo apt -y install python3.11
 
 # Vérifications
 echo "test node: " && nodejs -v && \
 echo "test npm: " && npm -v && \
-echo "test python3: " && python3.9 --version && \
+echo "test python3: " && python3.11 --version && \
 echo "test yarn: " && yarn --version
 ```
 
@@ -235,3 +235,13 @@ netsh int ip reset all
 netsh winhttp reset proxy
 ipconfig /flushdns
 ```
+
+### 👴 Old / Installation de WSL ~2020
+
+- [Windows Subsystem for Linux Installation Guide for Windows 10](https://docs.microsoft.com/fr-fr/windows/wsl/install-win10)
+  - [MS store ubuntu](https://www.microsoft.com/fr-fr/p/ubuntu-2004-lts/9n6svws3rx71)
+
+1. Télécharger
+2. Lancer
+3. Choisir username & password
+4. Mise à jour de l'OS
