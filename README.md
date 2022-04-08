@@ -57,6 +57,32 @@ ubuntu config --default-user root
 ubuntu2004 config --default-user root
 ```
 
+(Relancer le terminal WSL > Ubuntu)
+
+### Mise à jour vers la dernière version d'Ubuntu
+
+Un [article](https://linuxconfig.org/how-to-upgrade-ubuntu-to-22-04-lts-jammy-jellyfish) dédié.
+
+```bash
+# Assurer les dernières maj & suppressions des paquets deprecated
+sudo apt dist-upgrade && sudo apt -y autoremove
+
+# Installation du paquet de maj
+sudo apt install update-manager-core
+
+# Installer la dernière version, même si elle n'est pas encore sortie (~22.04)
+#   🚨 Attention, besoin d'actions manuelles de validation
+sudo do-release-upgrade -d
+
+# (Restart du terminal)
+
+# Vérifier la version
+lsb_release -a
+
+# Dernière maj paquets au cazou
+sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt dist-upgrade && sudo apt -y autoremove
+```
+
 ### (Optionnel) Installation des paquets usuels
 
 - NodeJs, npm, yarn
