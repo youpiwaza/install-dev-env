@@ -81,12 +81,25 @@ sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 omz update && git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull && sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 ```
 
-## (Nouveau) Terminal windows
+## Installation du CLI github
 
-La [doc officielle](https://docs.microsoft.com/fr-FR/windows/terminal/install).
+Installation du [CLI github](https://github.com/cli/cli), via [homebrew](https://brew.sh/).
 
-1. 💩 Lancer l'installation depuis le store crosoft
-   1. Téléchargement KO lel
+```bash
+# Installation de homebrew, l'utilisateur doit être différent de root
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Ajout au PATH
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/VOTRE_UTILISATEUR/.profile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Installation des dépendances & des recos
+sudo apt-get install build-essential
+brew install gcc
+
+# Installation du CLI github
+brew install gh
+```
 
 ---
 ---

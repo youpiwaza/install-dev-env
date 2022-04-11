@@ -106,11 +106,21 @@ echo "test python3: " && python3.11 --version && \
 echo "test yarn: " && yarn --version
 ```
 
-## Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
+## Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 22) : OMZ & p10K
 
 [Readme dédié](01-terminal/README.md)
 
-*Note* : Cela comprend l'installation d'Ansible grâce au script utilisé.
+*Notes* :
+
+- Comprend l'installation d'Ansible grâce au script utilisé.
+- Comprend l'stallation du CLI github, via homebrew (installé également)
+
+## (Nouveau) Terminal windows
+
+La [doc officielle](https://docs.microsoft.com/fr-FR/windows/terminal/install).
+
+1. 💩 Lancer l'installation depuis le store crosoft
+   1. Téléchargement KO lel
 
 ## (Optionnel) Mise en place de connexion SSH depuis WSL
 
