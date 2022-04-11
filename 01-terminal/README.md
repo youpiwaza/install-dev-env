@@ -1,4 +1,4 @@
-# Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 20) : OMZ & p10K
+# Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 22) : OMZ & p10K
 
 Installation du **terminal** *Oh My Zsh* et du **Thème** *PowerLevel10k*.
 
@@ -80,6 +80,13 @@ sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 ## One liner
 omz update && git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull && sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 ```
+
+## (Nouveau) Terminal windows
+
+La [doc officielle](https://docs.microsoft.com/fr-FR/windows/terminal/install).
+
+1. 💩 Lancer l'installation depuis le store crosoft
+   1. Téléchargement KO lel
 
 ---
 ---
