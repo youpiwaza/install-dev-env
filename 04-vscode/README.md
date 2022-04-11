@@ -2,53 +2,62 @@
 
 [Télécharger](https://code.visualstudio.com/) & installer
 
+## Configuration
+
+File > Preferences > Settings
+
+"bracketPairColorization" > Enable. Remplace l'ancien plugin en résolvant les problèmes de performance.
+
 ## Liste des plugins
 
 Désactivez/désinstallez ceux dont vous ne servez pas
 
 ### Common
 
-- Auto close tag
 - Auto rename tag
 - (Beautify)
-- ✨Better comments
+- Better comments
 - Bookmarks
-- Bracket Pair Colorizer 2
-- 💥Change case
+- Change case
 - Code Spell Checker
   - French - Code Spell Checker // Besoin reboot & activation
-- ✨Github Copilot // [Démo fermée](https://copilot.github.com/)
-- (Gitlens)
+- Color info
+- DotENV
+- 🚨 Github Copilot
+  - [Démo fermée](https://copilot.github.com/)
+  - Code partagé en vue d'amélioration, attention à la confidentialité
 - Indent rainbow
 - Markdown all in one
 - Markdown preview enhanced
 - Markdown lint
 - Material Icon Theme
-- (Prettier formatter)
 - Theme [Jellyfish](https://marketplace.visualstudio.com/items?itemName=PawelBorkar.jellyfish&ssr=false#overview)
-- ✨Todo Tree
-- 💥Toggle Quotes
-- (Trailing spaces)
+- Todo Tree
+- Toggle Quotes
 
 ### Ponctuels
 
-- Easy Sass // Compilateur
-- Live server
-- Live share
-- Polacode // Code screenshots
+- Beautify    // Linter
+- Easy Sass   // Compilateur
+- Live server // Serveur local
+- Live share  // Partage d'écran
+- Polacode    // Code screenshots
 
 ### Languages dependant
 
 Ce dont vous avez besoin, activer en fonction. Ca bouge assez souvent donc prenez les plus utilisés/récents
 
 - Ansible
+  - Ansible
+    - note: Les plugins sur le langage sont en ruine, au pire prendre le DEPRECATED de microsoft
+  - Better Jinja
   - language-ansible // Syntaxe
-  - note: Les plugins sur le langage sont en ruine, au pire prendre le DEPRECATED de microsoft
 - Docker
 - Javascript
   - ESLint
   - JavaScript Booster
   - Quokka // JS/TS playground
+- Python
 - Sass
 
 ### A testay
