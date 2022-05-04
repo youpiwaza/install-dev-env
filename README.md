@@ -158,24 +158,29 @@ enabled = true
 appendWindowsPath = true
 ```
 
-Puis redémarrer le terminal.
+Puis **forcer le redémarrage** du terminal WSL via **(WINDOWS) > CMD** (en admin) > `wsl --shutdown`.
 
 ```bash
 ## Dossier de l'utilisateur courant
 cd
 
 ## Création du lien symbolique vers les clés SSH windows
-ln -s /mnt/c/Users/WINDOWS_USER/.ssh ~/.ssh
+# ln -s /mnt/c/Users/WINDOWS_USER/.ssh ~/.ssh
+ln -s /mnt/c/Users/masam/.ssh ~/.ssh
 
 ## Ajustement des droits
-chown UBUNTU_USER:UBUNTU_USER .ssh 
-chown UBUNTU_USER:UBUNTU_USER .ssh/*
+# chown UBUNTU_USER:UBUNTU_USER ~/.ssh 
+# chown UBUNTU_USER:UBUNTU_USER ~/.ssh/*
+chown root:root ~/.ssh 
+chown root:root ~/.ssh/*
 ## Note: Si les clés ne sont pas chmod 600 (ou moins), c'est considéré comme une faille de sécurité et elles ne fonctionnent pas
 chmod 600 ~/.ssh/*
 
 ls -la
 # ...
 # lrwxrwxrwx  1 UBUNTU_USER UBUNTU_USER    26 Jun  2 11:49 .ssh -> /mnt/c/Users/WINDOWS_USER/.ssh
+
+ls -lah ~/.ssh/
 ```
 
 Note: Toujours pas de solution miracle pour connexion en 1 commande (`.ssh/config` redemande la passphrase systématiquement..)
