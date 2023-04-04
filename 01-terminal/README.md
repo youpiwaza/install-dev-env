@@ -304,3 +304,40 @@ Onglet macro > enregistrer
 *Après pas mal de galères..*
 
 ![fin](../docs/images/fin.jpg)
+
+## Edit 2023 > 🐛⬆️ Fix Maj python alakon sur WSL
+
+cf [SO](https://askubuntu.com/a/1402415)
+
+```bash
+# Paquets incriminés
+
+libpython3.11-stdlib
+libpython3.11-minimal
+python3.11
+python3.11-minimal
+
+# 💩 KO interdépendances alakon
+sudo apt remove libpython3.11-stdlib
+sudo apt remove libpython3.11-minimal
+sudo apt remove python3.11
+sudo apt remove python3.11-minimal
+
+# Identifier le blah, osef
+// ls -l /var/lib/dpkg/info | grep -i libpython3.10-minimal
+ls -l /var/lib/dpkg/info | grep -i libpython3.11-stdlib
+ls -l /var/lib/dpkg/info | grep -i libpython3.11-minimal
+ls -l /var/lib/dpkg/info | grep -i python3.11
+ls -l /var/lib/dpkg/info | grep -i python3.11-minimal
+
+# Virer à la main le tas de merde, forcer la réinstallation des packages
+sudo mv /var/lib/dpkg/info/libpython3.11-stdlib:amd64.* /tmp
+sudo mv /var/lib/dpkg/info/libpython3.11-minimal:amd64.* /tmp
+sudo mv /var/lib/dpkg/info/python3.11.* /tmp
+sudo mv /var/lib/dpkg/info/python3.11-minimal.* /tmp
+
+# One liner x2 - 3
+sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt -y clean && sudo apt -y autoremove
+
+# Profit
+```

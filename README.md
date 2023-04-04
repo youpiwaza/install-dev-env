@@ -15,6 +15,10 @@ Installation complète d'un environnement de dev sous Windows.
 
 1. [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
 
+Edit 2023 :
+
+1. Passer par le microsoft store > WSL
+
 Edit 2022 : nouvelle doc
 
 1. Passer les [pré-requis via Powershell](https://docs.microsoft.com/fr-fr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package), ne faire que les étapes 1 à 3
