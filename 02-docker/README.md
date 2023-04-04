@@ -1,5 +1,7 @@
 # Installation de Docker et ses potes sur windows
 
+Edit 2023 : Lien recommandé dans le terminal > [Docker Desktop WSL 2 backend on Windows](https://docs.docker.com/desktop/windows/wsl/), mais l'édit de 2021 suffit à priori.
+
 **Attention** : Même si maintenant c'est rarement un problème, vérifier que vous avez quelques Go de disponibles sur le disque d'installation.
 
 Durée: ~3-5mn en comptant les installations.
