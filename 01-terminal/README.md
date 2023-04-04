@@ -341,3 +341,11 @@ sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo 
 
 # Profit
 ```
+
+## Cazou > Mise à jour d'un seul package
+
+Parfois ça débloque la situation
+
+```bash
+sudo apt install --only-upgrade PACKAGE_NAME
+```
