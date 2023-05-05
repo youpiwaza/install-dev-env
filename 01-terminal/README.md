@@ -4,6 +4,12 @@ Installation du **terminal** *Oh My Zsh* et du **Thème** *PowerLevel10k*.
 
 Cay über rapide, pratique et joli.
 
+## Edit 2023 : 💾🗚 Add backup for font
+
+Originally from [zsh theme > powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
+
+`MesloLGS NF` font backup in the [fonts folder](./fonts).
+
 ## Edit 06/2021 : Clean & concis 🐬
 
 Voici les opérations résumées à partir des repos officiels
