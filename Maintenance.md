@@ -16,6 +16,8 @@ Prévu pour Windows + environnement de développement via WSL2 & Docker desktop.
 - 💩 KO
 - ⏳ en attente
 
+---
+
 ## La liste à copier / coller / ou versionner
 
 Tâches à *vérifier au moins une fois par semaine*, afin d'éviter un bordel plus tard/exponentiel
@@ -61,6 +63,7 @@ Tâches à *vérifier au moins une fois par semaine*, afin d'éviter un bordel p
 
 ```bash
 omz update
+# One liner, go triple click
 git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull && sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt -y clean && sudo apt -y autoremove && docker system prune -af && npm install -g npm@latest
 ```
 

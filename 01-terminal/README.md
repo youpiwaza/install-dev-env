@@ -1,27 +1,139 @@
-# Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 22) : OMZ & p10K
+# Installer & configurer un terminal sur Windows
 
-Installation du **terminal** *Oh My Zsh* et du **Thème** *PowerLevel10k*.
+WSL2 (Windows Sub Linux), mise à jour vers Ubuntu 22.
 
-Cay über rapide, pratique et joli.
+Configuration des couleurs (thème solarized) et autres.
 
-## Edit 2023 : 💾🗚 Add backup for font
+Installation des thèmes zsh & OMZ & p10K ainsi que leurs pré-requis.
 
-Originally from [zsh theme > powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
+## 🐧 WSL2 > Ubuntu LTS pour windows 10
 
-`MesloLGS NF` font backup in the [fonts folder](./fonts).
+1. [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
 
-## Edit 06/2021 : Clean & concis 🐬
+Passer par le microsoft store > WSL
+
+Le terminal que je recommande d'utiliser pour Windows
+
+Pas besoin pour Mac & Linux
+
+1. Démarrer > Microsoft store
+2. "WSL" ou "Windows Subsystem for Linux"
+3. Télécharger
+4. Installer
+
+![Comment installer WSL2 sur Windows](../docs/images/wsl.png)
+
+---
+
+### 🔧 Configuration manuelle
 
 Voici les opérations résumées à partir des repos officiels
 
 - Terminal > clic droit sur la barre du haut > Propriétés > (Options) > ✅ Utiliser Ctrl + Shift + C/V pour copier coller (cela évite les clics droit).
 - Pré-installation des polices reco pour le thème : [ici](https://github.com/romkatv/powerlevel10k#manual-font-installation)
   - Télécharger & installer de manière classique (clic droit > installer).
+  - Redémarrer le terminal
   - Terminal > clic droit sur la barre du haut > Propriétés > Police > MesloLGS.
   - Redémarrer le terminal
   - (Je reco une taille de police de 16, et d'en profiter pour régler la taille par défaut de la fenêtre afin de permettre d'afficher de multiples terminaux)
 - Changement automatique des couleurs pour [solarized dark](https://github.com/youpiwaza/backup-solarized-dark-for-wsl) (~maj des registres en RGB).
   - Cloner, lancer `install.vbs`, relancer le terminal.
+
+---
+
+### ⬆️ Mise à jour vers la dernière version d'Ubuntu
+
+Un [article](https://linuxconfig.org/how-to-upgrade-ubuntu-to-22-04-lts-jammy-jellyfish) dédié.
+
+```bash
+# Assurer les dernières maj & suppressions des paquets deprecated
+sudo apt dist-upgrade && sudo apt -y autoremove
+
+# Installation du paquet de maj
+sudo apt install update-manager-core
+
+# Installer la dernière version, même si elle n'est pas encore sortie (~22.04)
+#   🚨 Attention, besoin d'actions manuelles de validation
+sudo do-release-upgrade -d
+
+# (Restart du terminal)
+
+# Vérifier la version
+lsb_release -a
+
+# Dernière maj paquets au cazou
+sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt dist-upgrade && sudo apt -y autoremove
+```
+
+---
+
+## Restreindre WSL2 en RAM
+
+[blah](https://youtu.be/idW-an99TAM?t=1515)
+
+```bash
+nano /mnt/c/Users/WINDOWS_USER/.wslconfig
+```
+
+Y ajouter
+
+```ini
+[wsl2]
+memory=6GB
+```
+
+Redémarrer WSL2 (fermer & rouvrir le terminal)
+
+---
+
+### (Optionnel) Installation des paquets usuels
+
+- NodeJs, npm, yarn
+- python
+
+```bash
+# Installations chainées
+echo "deb https://dl.yarnpkg.com/debian/ stable main" && \
+sudo apt update && \
+sudo apt -y install nodejs && \
+sudo apt -y install npm && \
+sudo apt -y install yarn && \
+sudo apt -y install software-properties-common && \
+sudo add-apt-repository ppa:deadsnakes/ppa -y && \
+sudo apt -y install python3.11
+
+# Vérifications
+echo "test node: " && nodejs -v && \
+echo "test npm: " && npm -v && \
+echo "test python3: " && python3.11 --version && \
+echo "test yarn: " && yarn --version
+```
+
+---
+
+### (Optionnel) Switcher sur l'utilisateur root par défaut
+
+Parce que l'utilisateur normal peut déconner/merder au niveau de l'attribution des droits, et parce que `sudo` c'relou en local
+
+```bash
+## Depuis un INVITE DE COMMANDE WINDOWS, lancé en administrateur
+##    https://superuser.com/questions/1107986/how-to-sign-into-root-account-by-default-on-windows-subsystem-for-linux-bash-t#comment2465514_1291457
+## Ubuntu 18
+ubuntu config --default-user root
+
+## Ubuntu 20+
+ubuntu2004 config --default-user root
+```
+
+(Relancer le terminal WSL > Ubuntu)
+
+---
+
+## 🎨 zsh & OMZ & p10k
+
+Pas mal de raccourcis, configuration, optimisation des performances, fonctions supplémentaires, personnalisation
+
+Comprend l'installation d'*Ansible* 🤖 via le script dédié.
 
 ```bash
 ## Edit 2021: En cas de réinstallation/mise à jour de ubuntu (avec les fichiers ~/.zshrc partagés -_-)
@@ -60,18 +172,18 @@ nano ~/.zshrc
 
 Remplir le questionnaire selon les préférences. Profit.
 
-### Notes
+### 📝 Notes
 
 - Plutôt que de partir d'un mec qui en parle, utiliser leS vraiS repoS
   - du terminal [OMZ](https://github.com/ohmyzsh/ohmyzsh)
   - du theme [PowerLevel10k](https://github.com/romkatv/powerlevel10k).
-- Je laisse les anciennes notes en cas de problème..
-- Le terminal est lent AF après l'install du script ansible, mais c'est corrigé via le theme PL10K
+- 🐛⚡️ Le terminal est lent AF après l'install du script ansible, mais c'est corrigé via le theme PL10K
   - Note c'est même putain de rapide, plus de soucis d'inputs mangés ou quoi ; cf [demo](https://asciinema.org/a/NHRjK3BMePw66jtRVY2livHwZ).
 - Le thème dispose également d'une chiée d'[options de base](https://github.com/romkatv/powerlevel10k#batteries-included), relatives au confort, voir a différents langages, env. de dev/prod, etc. mais également de plugins.
-- Je devais être fin claqué/au bout de ma vie lors de la première installation lel
 
-### Mises à jour
+---
+
+### ⬆️ Mises à jour
 
 ```bash
 ## (Manual update OMZ)
@@ -87,7 +199,9 @@ sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 omz update && git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull && sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade
 ```
 
-## Installation du CLI github
+---
+
+## 💾 Installation du CLI github
 
 Installation du [CLI github](https://github.com/cli/cli), via [homebrew](https://brew.sh/).
 
@@ -108,250 +222,122 @@ brew install gh
 ```
 
 ---
----
----
 
-## Old 👴💩
+## ♻️ Maintenance
 
-Choix porté sur zsh/oh-my-zsh & tmux
+[WSL2](https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm)
 
-Utilisation de ansible-galaxy histoire de pas y passer 1000 ans
-
-Choix d'un repo avec une bonne pertinence [zsh repo + oh-my + theme](https://galaxy.ansible.com/viasite-ansible/zsh)
-
-Récupération de la commande en one shot (dans l'onglet README) qui comporte l'installation d'ansible et tout x)
+Powershell > run as admin
 
 ```bash
-# Éxécuter le script auto
-curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
+# Close all WSL terminals and run this to fully shut down WSL.
+## Notification > NON je ne veux pas redémarrer, pour le moment
+wsl.exe --shutdown
+
+# Replace Nick with your Windows user name. This is where Docker stores its VM file.
+cd C:\Users\WINDOWS_USER\AppData\Local\Docker\wsl\data\
+
+# Compact the Docker Desktop WSL VM file and you're done.
+# NOTE: This may not work with Windows Home edition (read below).
+optimize-vhd -Path .\ext4.vhdx -Mode full
 ```
 
-**Important** : Relancer le terminal
-
-// FONTS KO
-
-![FONTS KO](../docs/images/Custom-WSL-terminal-1-police.jpg)
-
-## Installer les polices pour le terminal WLS
-
-[Lien recommandé](https://github.com/microsoft/WSL/issues/91#issuecomment-220369715)
-
-### Choix d'une police
-
-**Prendre une TTF !** / et attention aux [restrictions](https://superuser.com/questions/583835/adding-microsoft-console-cmd-font-in-registry-does-not-work-with-eastern-asian) windaube.
-
-[Powerline fonts preview](https://github.com/powerline/fonts/blob/master/samples/All.md)
-
-DejaVuSansMono, reco par le mec ansible // **La seule qui marche sur 4-5 de testées**.
-
-~~Meslo LG M, thème reco OMZ~~ // KO Parce que nique la logique
-~~Source code + FA~~ // KO
-
-### Installer de manière régulière
-
-- Télécharger [les polices](https://github.com/powerline/fonts) via github
-- Extraire > Installer
-
-![Telecharger et installer font sur windows](../docs/images/Custom-WSL-terminal-2-police.jpg)
-
-### Installation pour windows, via le registre
-
-*Accès au registre* : Windows "demarrer" > Taper "Registr"..)
-
-- Editeur de registre > Ordinateur\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
-  - Récupérer le nom de la police, sans (TrueType), ex: "DejaVu Sans Mono for Powerline" (C/C depuis Registre > Renommer)
-
-![Récupérer le nom dans le registre](../docs/images/Custom-WSL-terminal-4-police.jpg)
-
-- Editeur de registre > Ordinateur\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Console\TrueTypeFont
-  - Nouvelle entrée > 00 (ou 000, 0000, 00000, etc. si déjà pris)
-  - "DejaVu Sans Mono for Powerline"
-
-![Ajouter aux polices disponibles pour la console](../docs/images/Custom-WSL-terminal-5-police.jpg)
-
-- **Rebooter le pc**
-
-### Utilisation dans WLS
-
-- WLS > Barre du haut > Clic droit > Propriétés > Polices > "DejaVu Sans Mono for Powerline"
-
-![WLS > Barre titre > Clic droit](../docs/images/Custom-WSL-terminal-6-police.jpg)
-
-![WLS > Onglet police > Choix](../docs/images/Custom-WSL-terminal-7-police.jpg)
-
-![yay](../docs/images/Custom-WSL-terminal-8-police.jpg)
-
-- yay
-
-#### Liens
-
-- [WSL issue / Oh-my-zsh's icons don't show correctly #1517](https://github.com/Microsoft/WSL/issues/1517)
-- [Windows Change console font](https://superuser.com/questions/5035/how-to-change-the-windows-xp-console-font)
-
-## Configurer oh-my-zsh
-
-Parce que ca ressemble toujours a de la merde pour le moment
-
-[Doc OMZ](https://github.com/ohmyzsh/ohmyzsh#themes) / C'est normal, thème par défaut ultra basique
-
-### Choisir un thème
-
-- [Agnoster](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster)
-- [Powerlevel10k](https://gist.github.com/kevin-smets/8568070#powerlevel9k--powerlevel10k) / Plus facile a configurer
-  - Pas de font icons sur windows a priori (restrictions)
-
-Les deux ont les trucs git et tout. je reste sur PL10k car le chemin des dossiers est tronqué (Wia WLS, si on bosse en local, il faut accéder à ses projets via `/mnt/c/Users/MONNOM/.../` ce qui prend pas mal de place).
-
-### Mise en place du thème de base (agnoster)
-
-**Mise en place** du thème
-
-[Lien cookbook galaxy](https://galaxy.ansible.com/viasite-ansible/zsh) > Rechercher "Configure"
-
-.. et ne pas suivre les recos, ça ne marche pas.
-
-**Rappel vi** / L'éditeur de texte de base du terminal
-
-- Par défaut on est pas en mode insertion (on ne peut pas modifier)
-- "i" pour insérer/modifier du texte, puis échap pour revenir au mod normal
-- ":wq" / sauvegarder et quitter
-
-```bash
-# KO / sudo cp ~/.zshrc /etc/zshrc.local
-# KO / sudo vi /etc/zshrc.local
-# KO / sudo cp ~/.zshrc ~/.zshrc.local
-# KO / sudo vi ~/.zshrc.local
-sudo vi ~/.zshrc
-```
-
-Remplacer `ZSH_THEME="robbyrussell"` par `ZSH_THEME="agnoster"`, avec vi.
-
-Et c'est toujours aussi dégeulasse.
-
-### Mise en place des couleurs de terminal
-
-A éditer à la main à partir des sources ([theme solarized](https://ethanschoonover.com/solarized/)) dans le registre windaube.
-
-Ou sinon un mec l'a déjà fait en édition 1 clic : [solarized for windaube](https://github.com/nsilvestri/solarized-dark-for-wsl).
-
-![Couleurs solarized](../docs/images/Custom-WSL-terminal-9-couleurs.jpg)
-
-Possibilité de fixer de la transparence également.
-
-![Final agnoster](../docs/images/Custom-WSL-terminal-final-agnoster.jpg)
-
-*Exemple final* avec thème OMZ agnoster
-
-### Optionnel > theme Powerlevel10k
-
-*Note : Je ne sais pas si le fait d'avoir installé l'autre thème avant joue..*
-
-[Reco](https://gist.github.com/kevin-smets/8568070#powerlevel9k--powerlevel10k)
-
-```bash
-> sudo git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-```
-
-Then edit your ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k".
-
-Relancer terminal, et suivre l'installation de la configuration.
-
-Valider.
-
-![Final Powerlevel 10k](../docs/images/Custom-WSL-terminal-final-Powerlevel10k.jpg)
-
-## Onglets multiples & autres
-
-**Edit** : Au final je passe directement pas le bash ubuntu.
-
-Ajouter l'icône WSL à la barre des tâches, clic droit > ubuntu. Cela ouvre une nouvelle instance (Mais pas un nouvel onglet).
+Relancer docker desktop
 
 ---
 
-MobaXterm > Utilitaire de terminal multiple windows, avec pas mal de commandes de base
+## 📝 Ressources
 
-- [SO / Multiple terminal windows in Windows Ubuntu?](https://askubuntu.com/a/1142676)
-- [MobaXterm / Blog release 9.0](https://blog.mobatek.net/post/mobaxterm-new-release-9.0/) / Utilitaire windows anti cancer
-- [MobaXterm / Téléchargement](https://mobaxterm.mobatek.net/download-home-edition.html) / Installer edition
+1. Installation originale [zsh theme > powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
+2. 💾🗚 La police `MesloLGS NF`, qui permet l'affichage des icônes "dev", est sauvegardée dans le dossier [/fonts](./fonts)
+3. 👴📝 Anciennes [notes](./old.md) en cas de problème, qui proposent quelques fixs
 
-Une fois installé, configurer une session WSL/Ubuntu par défaut :
+---
 
-- Supprimer la session par défaut
-- Session > WSL > Ubuntu
+## 🔗 (Optionnel) Mise en place de connexion SSH depuis WSL
 
-![Session > WSL > Ubuntu](../docs/images/MobaXterm-1-creer-session.jpg)
+Permet un accès direct au serveur depuis WSL. En gros partager les fichiers de clés de windows via un lien.
 
-![Nommer in Bookmark settings](../docs/images/MobaXterm-2-creer-session.jpg)
+WSL2 a besoin d'un peu plus de conf:
 
-- Nommer in Bookmark settings
-
-![Yay](../docs/images/MobaXterm-3-creer-session.jpg)
-
-### Fixer le répertoire par défaut
-
-Onglet macro > enregistrer
-
-![Nouvelle macro](../docs/images/MobaXterm-4-macro-cd.jpg)
-
-> cd /mnt/c/Users/XXXX/CheminVersProjets
-
-- Arreter l'enregistrement
-- Nommer
-- Onglet session > (la session créée ci-dessus) > clic droit > edit session > Advanced SWL settings > execute macro > choisir la macro
-
-![Modifier la session](../docs/images/MobaXterm-5-macro-cd.jpg)
-
-- Tester
-
-![Ajouter la macro par defaut](../docs/images/MobaXterm-6-macro-cd.jpg)
-
-#### Plein le q
-
-*Après pas mal de galères..*
-
-![fin](../docs/images/fin.jpg)
-
-## Edit 2023 > 🐛⬆️ Fix Maj python alakon sur WSL
-
-cf [SO](https://askubuntu.com/a/1402415)
+- [SO / Ubuntu on windows 10 wsl2 - chown chmod doesn't work on copied files](https://stackoverflow.com/questions/63600692/ubuntu-on-windows-10-wsl2-chown-chmod-doesnt-work-on-copied-files)
+- ['crosoft > Sharing SSH keys between Windows and WSL 2](https://devblogs.microsoft.com/commandline/sharing-ssh-keys-between-windows-and-wsl-2/)
+- [old article, but see comments](https://florianbrinkmann.com/en/ssh-key-and-the-windows-subsystem-for-linux-3436/).
 
 ```bash
-# Paquets incriminés
-
-libpython3.11-stdlib
-libpython3.11-minimal
-python3.11
-python3.11-minimal
-
-# 💩 KO interdépendances alakon
-sudo apt remove libpython3.11-stdlib
-sudo apt remove libpython3.11-minimal
-sudo apt remove python3.11
-sudo apt remove python3.11-minimal
-
-# Identifier le blah, osef
-// ls -l /var/lib/dpkg/info | grep -i libpython3.10-minimal
-ls -l /var/lib/dpkg/info | grep -i libpython3.11-stdlib
-ls -l /var/lib/dpkg/info | grep -i libpython3.11-minimal
-ls -l /var/lib/dpkg/info | grep -i python3.11
-ls -l /var/lib/dpkg/info | grep -i python3.11-minimal
-
-# Virer à la main le tas de merde, forcer la réinstallation des packages
-sudo mv /var/lib/dpkg/info/libpython3.11-stdlib:amd64.* /tmp
-sudo mv /var/lib/dpkg/info/libpython3.11-minimal:amd64.* /tmp
-sudo mv /var/lib/dpkg/info/python3.11.* /tmp
-sudo mv /var/lib/dpkg/info/python3.11-minimal.* /tmp
-
-# One liner x2 - 3
-sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt -y clean && sudo apt -y autoremove
-
-# Profit
+## Ajouter la gestion des metadatas à wsl
+nano /etc/wsl.conf
 ```
 
-## Cazou > Mise à jour d'un seul package
+Rajouter dans la conf..
 
-Parfois ça débloque la situation
+```ini
+[automount]
+enabled = true
+options = "metadata,uid=1000,gid=1000,umask=0022,fmask=11,case=off"
+mountFsTab = false
+crossDistro = true
+
+[filesystem]
+umask = 0022
+
+[network]
+generateHosts = true
+generateResolvConf = true
+
+[interop]
+enabled = true
+appendWindowsPath = true
+```
+
+Puis **forcer le redémarrage** du terminal WSL via **(WINDOWS) > CMD** (en admin) > `wsl --shutdown`.
 
 ```bash
-sudo apt install --only-upgrade PACKAGE_NAME
+## Dossier de l'utilisateur courant
+cd
+
+## Création du lien symbolique vers les clés SSH windows
+# ln -s /mnt/c/Users/WINDOWS_USER/.ssh ~/.ssh
+ln -s /mnt/c/Users/masam/.ssh ~/.ssh
+
+## Ajustement des droits
+# chown UBUNTU_USER:UBUNTU_USER ~/.ssh 
+# chown UBUNTU_USER:UBUNTU_USER ~/.ssh/*
+chown root:root ~/.ssh 
+chown root:root ~/.ssh/*
+## Note: Si les clés ne sont pas chmod 600 (ou moins), c'est considéré comme une faille de sécurité et elles ne fonctionnent pas
+chmod 600 ~/.ssh/*
+
+ls -la
+# ...
+# lrwxrwxrwx  1 UBUNTU_USER UBUNTU_USER    26 Jun  2 11:49 .ssh -> /mnt/c/Users/WINDOWS_USER/.ssh
+
+ls -lah ~/.ssh/
 ```
+
+Note: Toujours pas de solution miracle pour connexion en 1 commande (`.ssh/config` redemande la passphrase systématiquement..)
+
+cf. [Repo dédié](https://github.com/youpiwaza/server-related-tutorials/tree/master/02-ansible/01-configuration-ssh) pour les détails.
+
+---
+
+## 🐛 Problèmes / Troubleshootings
+
+### 🔌 WSL Can't connect to the internet
+
+Peut arriver de manière aléatoire...
+
+[SO Resource](https://stackoverflow.com/questions/62314789/no-internet-connection-on-wsl-ubuntu-windows-subsystem-for-linux)
+
+Lancer `cmd` ou `powershell` en tant qu'administrateur.
+
+```bash
+# No need to reboot if you shutdown WSL beforehand
+wsl --shutdown
+netsh winsock reset
+netsh int ip reset all
+netsh winhttp reset proxy
+ipconfig /flushdns
+```
+
+Vous pouvez tester `/etc/resolv.conf` pour vous assurer que les adresses IP on bien changées après la manipulation.

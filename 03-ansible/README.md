@@ -1,4 +1,6 @@
-# Installation et utilisation d'Ansible
+# 🤖 Installation et utilisation d'Ansible
+
+Permet de faire de l'automatisation, ainsi que de l'IaC / *Infrastructure As Code*.
 
 Récupération et amélioration du [script](https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh) trouvé lors de l'installation du terminal.
 
