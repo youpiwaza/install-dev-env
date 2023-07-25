@@ -11,6 +11,12 @@ Installation complète d'un environnement de dev sous Windows.
 - OMZ / 💅 Oh-My-Zsh, moteur de thème pour ZSH ^
 - p10k / 🐲 Le thème *PowerLevel10k* pour OMZ
 
+## Maintenance
+
+Processus afin de tout [garder à jour / propre](./Maintenance.md).
+
+---
+
 ## Installer (via WLS) ubuntu LTS pour windows 10
 
 1. [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
