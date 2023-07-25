@@ -25,7 +25,9 @@ Edit 2023 :
 
 1. Passer par le microsoft store > WSL
 
-Edit 2022 : nouvelle doc
+---
+
+👴 *deprecated* Edit 2022 : nouvelle doc
 
 1. Passer les [pré-requis via Powershell](https://docs.microsoft.com/fr-fr/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package), ne faire que les étapes 1 à 3
 2. [Installer WSL 2 via Powershell](https://docs.microsoft.com/fr-fr/windows/wsl/install)
@@ -53,6 +55,8 @@ ls -la
 # drwxrwxrwx 1 youpiwaza youpiwaza      512 May 27 08:59  Windows
 ```
 
+---
+
 ### (Optionnel) Switcher sur l'utilisateur root par défaut
 
 Parce que l'utilisateur normal peut déconner/merder au niveau de l'attribution des droits, et parce que `sudo` c'relou en local
@@ -68,6 +72,8 @@ ubuntu2004 config --default-user root
 ```
 
 (Relancer le terminal WSL > Ubuntu)
+
+---
 
 ### Mise à jour vers la dernière version d'Ubuntu
 
@@ -93,6 +99,8 @@ lsb_release -a
 sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt dist-upgrade && sudo apt -y autoremove
 ```
 
+---
+
 ### (Optionnel) Installation des paquets usuels
 
 - NodeJs, npm, yarn
@@ -116,6 +124,8 @@ echo "test python3: " && python3.11 --version && \
 echo "test yarn: " && yarn --version
 ```
 
+---
+
 ## Installer le terminal sur Windows > WSL (Windows Sub Linux > Ubuntu 22) : OMZ & p10K
 
 [Readme dédié](01-terminal/README.md)
@@ -125,12 +135,16 @@ echo "test yarn: " && yarn --version
 - Comprend l'installation d'Ansible grâce au script utilisé.
 - Comprend l'stallation du CLI github, via homebrew (installé également)
 
+---
+
 ## (Nouveau) Terminal windows
 
 La [doc officielle](https://docs.microsoft.com/fr-FR/windows/terminal/install).
 
 1. 💩 Lancer l'installation depuis le store crosoft
    1. Téléchargement KO lel
+
+---
 
 ## (Optionnel) Mise en place de connexion SSH depuis WSL
 
@@ -197,9 +211,13 @@ Note: Toujours pas de solution miracle pour connexion en 1 commande (`.ssh/confi
 
 cf. [Repo dédié](https://github.com/youpiwaza/server-related-tutorials/tree/master/02-ansible/01-configuration-ssh) pour les détails.
 
+---
+
 ## Installation de docker et ses potes
 
 [Readme dédié](02-docker/README.md)
+
+---
 
 ## Recos supplémentaires de nick
 
@@ -207,6 +225,8 @@ cf. l'[article correspondant](https://nickjanetakis.com/blog/the-tools-i-use).
 
 - [PowerToys](https://github.com/microsoft/PowerToys) / Plein d'utilitaires pour les tâches courantes / Alt + space > lancer un programme
 - 💖 [Ditto](https://ditto-cp.sourceforge.io/) / Copier collers multiples + recherche dans historique / [Setup avec terminal](https://nickjanetakis.com/blog/boosting-software-developer-productivity-with-a-clipboard-manager)
+
+---
 
 ### Maintenance docker & WSL
 
@@ -262,9 +282,13 @@ optimize-vhd -Path .\ext4.vhdx -Mode full
 
 Relancer docker desktop
 
+---
+
 ## Mise en place de l'éditeur de texte / VSCode
 
 [wesh](04-vscode/README.md)
+
+---
 
 ## Troubleshootings / Problems
 
