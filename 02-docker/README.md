@@ -73,12 +73,16 @@ docker login --username TON_USERNAME_WESH
 5. ..
 6. Profits
 
+---
+
 ## ♻️ Maintenance
 
 ```bash
 ## Docker > Remove everything not used, no need to confirm
 docker system prune -af
 ```
+
+---
 
 ## 🐛 Problèmes rencontrés
 
@@ -94,6 +98,8 @@ Potentiellement lié au fait que le service est désactivé dans les réglages d
 Au pire essayer de le lancer en tant qu'admin.
 
 Au pire réinstaller > ne pas oublier de re-configurer.
+
+---
 
 #### Vérifier que "Hyper-V" est activé
 
