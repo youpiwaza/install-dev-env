@@ -41,6 +41,34 @@ Voici les opérations résumées à partir des repos officiels
 
 ---
 
+### 📝 Quelques commandes de terminal usuelles, sous linux
+
+Afin de pouvoir effectuer quelques manipulations de base
+
+```bash
+# Afficher le contenu du répertoire courant
+#   = list
+ls
+
+# Afficher le contenu du répertoire courant, avec plus de détails et les fichiers cachés
+ls -lah
+
+# Affichage verticla du contenu du répertoire courant
+ll
+
+# Ou suis-je dans l'arborescence
+pwd
+
+# Se déplacer des les répertoires
+#   = change directory
+cd LE_REPERTOIRE
+
+# Je suis quel utilisateur ? Pour les droits
+whoami
+```
+
+---
+
 ### ⬆️ Mise à jour vers la dernière version d'Ubuntu
 
 Un [article](https://linuxconfig.org/how-to-upgrade-ubuntu-to-22-04-lts-jammy-jellyfish) dédié.
@@ -144,7 +172,7 @@ ubuntu2004 config --default-user root
 
 Pas mal de raccourcis, configuration, optimisation des performances, fonctions supplémentaires, personnalisation
 
-Comprend l'installation d'*Ansible* 🤖 via le script dédié.
+Comprend l'installation d'*Ansible* 🤖 dont l'installation à besoin.
 
 ```bash
 ## Edit 2021: En cas de réinstallation/mise à jour de ubuntu (avec les fichiers ~/.zshrc partagés -_-)
@@ -221,7 +249,7 @@ Installation du [CLI github](https://github.com/cli/cli), via [homebrew](https:/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Ajout au PATH
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/VOTRE_UTILISATEUR/.profile
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/VOTRE_UTILISATEUR_WSL2/.profile
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Installation des dépendances & des recos
