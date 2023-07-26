@@ -9,8 +9,8 @@ Création d'un [repo dédié](https://github.com/youpiwaza/install-ansible-scrip
 ## Installation en une commande
 
 ```bash
-> curl https://raw.githubusercontent.com/youpiwaza/install-ansible-script/master/ansible-install.sh | bash
+curl https://raw.githubusercontent.com/youpiwaza/install-ansible-script/master/ansible-install.sh | bash
 
 # Vérification
-> ansible --version
+ansible --version
 ```
