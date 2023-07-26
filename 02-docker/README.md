@@ -97,8 +97,6 @@ Potentiellement lié au fait que le service est désactivé dans les réglages d
 
 Au pire essayer de le lancer en tant qu'admin.
 
-Au pire réinstaller > ne pas oublier de re-configurer.
-
 ---
 
 #### Vérifier que "Hyper-V" est activé
@@ -124,3 +122,9 @@ Au pire réinstaller > ne pas oublier de re-configurer.
 ![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-05.png)
 
 ---
+
+### ♻️✨ Au pire réinstaller
+
+1. Gestionnaire de tâche > Fin de tâche pour docker desktop ET son service
+2. Lancer l'installeur en tant qu'administrateur
+3. Ne pas oublier de re-configurer
