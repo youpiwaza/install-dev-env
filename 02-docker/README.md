@@ -21,8 +21,19 @@ Après avoir installé docker desktop, le lancer, aller dans la configuration et
 
 et.. c'est tout.
 
+---
+
+![config docker desktop](../docs/images/docker/config/docker-desktop-config-1.png)
+
+---
+
+![config docker desktop](../docs/images/docker/config/docker-desktop-config-2.png)
+
+---
+
+## 📌 Test sur WSL2
+
 ```bash
-## Test sur WSL2
 docker info
 # blah² les infos docker
 
