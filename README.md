@@ -4,6 +4,8 @@ Histoire de partir sur de bonnes bases.
 
 Installation complète d'un environnement de dev sous Windows, adaptable pour Mac & Linux.
 
+Mac et linux > Potentiellement pas besoin d'installer certains logiciels may répercuter les commandes dans les terminaux des OS.
+
 Comprend :
 
 1. 🟩 NodeJs & npm

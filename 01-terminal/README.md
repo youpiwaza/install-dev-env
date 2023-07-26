@@ -67,26 +67,16 @@ sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo 
 
 ---
 
-## Restreindre WSL2 en RAM
+### (Optionnel) Installation des paquets usuels
 
-[blah](https://youtu.be/idW-an99TAM?t=1515)
+Editeurs de textes dans le terminal
 
 ```bash
-nano /mnt/c/Users/WINDOWS_USER/.wslconfig
+apt install vim
+apt install nano
 ```
-
-Y ajouter
-
-```ini
-[wsl2]
-memory=6GB
-```
-
-Redémarrer WSL2 (fermer & rouvrir le terminal)
 
 ---
-
-### (Optionnel) Installation des paquets usuels
 
 - NodeJs, npm, yarn
 - python
@@ -108,6 +98,25 @@ echo "test npm: " && npm -v && \
 echo "test python3: " && python3.11 --version && \
 echo "test yarn: " && yarn --version
 ```
+
+---
+
+## Restreindre WSL2 en RAM
+
+[blah](https://youtu.be/idW-an99TAM?t=1515)
+
+```bash
+nano /mnt/c/Users/WINDOWS_USER/.wslconfig
+```
+
+Y ajouter
+
+```ini
+[wsl2]
+memory=6GB
+```
+
+Redémarrer WSL2 (fermer & rouvrir le terminal)
 
 ---
 
