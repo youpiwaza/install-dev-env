@@ -128,3 +128,7 @@ Au pire essayer de le lancer en tant qu'admin.
 1. Gestionnaire de tâche > Fin de tâche pour docker desktop ET son service
 2. Lancer l'installeur en tant qu'administrateur
 3. Ne pas oublier de re-configurer
+
+Ne pas oublier de prier RNGesus 🙏
+
+![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/rngesus.png)
