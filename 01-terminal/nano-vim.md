@@ -68,6 +68,7 @@ bonjour tout le monde !
 # Quitter nano pour retourner au terminal classique
 (Ctrl + X)
 (Peut être besoin d'enregistrer si modifications non sauvegardées)
+  (Y)
 
 # Vérifier le contenu
 cat LE_NOM_DU_FICHIER

@@ -79,3 +79,18 @@ docker login --username TON_USERNAME_WESH
 ## Docker > Remove everything not used, no need to confirm
 docker system prune -af
 ```
+
+## 🐛 Problèmes rencontrés
+
+### Docker desktop ne démarre pas
+
+Potentiellement lié au fait que le service est désactivé dans les réglages de démarrage
+
+1. Afficher le gestionnaire de tâches `Ctrl` + `Shift` + `Echap`
+2. Onglet "Démarrage"
+3. S'assurer que `Docker desktop` a un statut "Activé"
+4. Redémarrer
+
+Au pire essayer de le lancer en tant qu'admin.
+
+Au pire réinstaller > ne pas oublier de re-configurer.
