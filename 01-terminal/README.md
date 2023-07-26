@@ -65,6 +65,28 @@ cd LE_REPERTOIRE
 
 # Je suis quel utilisateur ? Pour les droits
 whoami
+
+# Créer un répertoire
+#   = make directory
+mkdir LE_NOM_DU_REPERTOIRE_A_CREER
+
+# Créer un fichier
+touch LE_NOM_DU_FICHIER_A_CREER
+
+# Afficher le contenu d'un fichier
+cat LE_NOM_DU_FICHIER
+
+# Déplacer / renommer un fichier
+#   = move
+mv ANCIEN_NOM_OU_EMPLACEMENT NOUVEAU_NOM_OU_EMPLACEMENT
+
+# Supprimer un fichier
+#   = remove
+rm LE_NOM_DU_FICHIER_A_SUPPRIMER
+
+# Supprimer un répertoire et toute son arborescence, son contenu
+#   -r = de manière récursive
+rm -r LE_NOM_DU_REPERTOIRE_A_SUPPRIMER
 ```
 
 ---
@@ -105,6 +127,8 @@ Editeurs de textes dans le terminal
 apt install vim
 apt install nano
 ```
+
+Mini doc maison pour apprendre à utiliser les [éditeurs de textes / fichiers](./nano-vim.md) sous terminal.
 
 ---
 
@@ -266,14 +290,14 @@ brew install gh
 
 [WSL2](https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm)
 
-Powershell > run as admin
+cmd ou Powershell > run as admin
 
 ```bash
 # Close all WSL terminals and run this to fully shut down WSL.
 ## Notification > NON je ne veux pas redémarrer, pour le moment
 wsl.exe --shutdown
 
-# Replace Nick with your Windows user name. This is where Docker stores its VM file.
+# Replace WINDOWS_USER with your Windows user name. This is where Docker stores its VM file.
 cd C:\Users\WINDOWS_USER\AppData\Local\Docker\wsl\data\
 
 # Compact the Docker Desktop WSL VM file and you're done.
