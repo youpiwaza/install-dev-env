@@ -87,6 +87,9 @@ rm LE_NOM_DU_FICHIER_A_SUPPRIMER
 # Supprimer un répertoire et toute son arborescence, son contenu
 #   -r = de manière récursive
 rm -r LE_NOM_DU_REPERTOIRE_A_SUPPRIMER
+
+# 🧹 Supprimer ce qui est affiché sur le terminal
+clear
 ```
 
 ---
