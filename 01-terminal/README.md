@@ -69,6 +69,8 @@ sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo 
 
 ### (Optionnel) Installation des paquets usuels
 
+🔍 Doc sur l'[installation de paquets](https://doc.ubuntu-fr.org/tutoriel/comment_installer_un_paquet) : Préférer utiliser `apt install` plutôt que `apt-get install`, plus récent.
+
 Editeurs de textes dans le terminal
 
 ```bash
