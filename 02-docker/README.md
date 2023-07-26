@@ -94,3 +94,27 @@ Potentiellement lié au fait que le service est désactivé dans les réglages d
 Au pire essayer de le lancer en tant qu'admin.
 
 Au pire réinstaller > ne pas oublier de re-configurer.
+
+#### Vérifier que "Hyper-V" est activé
+
+🔍 [yay](https://collabnix.com/error-docker-failed-to-start-docker-desktop-for-windows/#:~:text=You%20can%20try%20reinstalling%20Docker,attempting%20to%20start%20Docker%20again.)
+
+![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-1.png)
+
+---
+
+![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-2.png)
+
+---
+
+![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-3.png)
+
+---
+
+![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-4.png)
+
+---
+
+![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-5.png)
+
+---
