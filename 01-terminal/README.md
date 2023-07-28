@@ -43,7 +43,7 @@ Voici les opérations résumées à partir des repos officiels
 
 ### 📝 Quelques commandes de terminal usuelles, sous linux
 
-![README dédié](./commandes.md)
+[README dédié](./commandes.md)
 
 ---
 
