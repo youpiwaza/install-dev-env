@@ -53,4 +53,8 @@ rm -r LE_NOM_DU_REPERTOIRE_A_SUPPRIMER
 
 # 🧹 Supprimer ce qui est affiché sur le terminal
 clear
+
+# Exécuter VSCode à partir de cet emplacement
+#       Très utile pour lancer depuis WSL2
+code .
 ```
