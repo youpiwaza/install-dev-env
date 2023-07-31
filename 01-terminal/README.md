@@ -30,7 +30,7 @@ Pas besoin pour Mac & Linux
 Voici les opérations résumées à partir des repos officiels
 
 - Terminal > clic droit sur la barre du haut > Propriétés > (Options) > ✅ Utiliser Ctrl + Shift + C/V pour copier coller (cela évite les clics droit).
-- Pré-installation des polices reco pour le thème : [ici](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+- Pré-installation des [polices reco pour le thème](https://github.com/romkatv/powerlevel10k#manual-font-installation)
   - Télécharger & installer de manière classique (clic droit > installer).
   - Redémarrer le terminal
   - Terminal > clic droit sur la barre du haut > Propriétés > Police > MesloLGS.

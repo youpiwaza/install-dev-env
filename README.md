@@ -8,8 +8,8 @@ Mac et linux > Potentiellement pas besoin d'installer certains logiciels may ré
 
 Comprend :
 
-1. 🟩 NodeJs & npm
-2. .NET
+1. .NET
+2. 🟩 NodeJs & npm
 3. 🐧 Un terminal "propre" / WSL2
 4. 🐳 Docker via Docker Desktop
 5. 🤖 Ansible
@@ -30,18 +30,6 @@ Comprend :
 
 ---
 
-## 🟩 NodeJs & npm
-
-Installation simple & rapide de Node & npm pour l’ensemble des OS
-
-1. Se rendre sur le site officiel : [https://nodejs.org/](https://nodejs.org/)
-2. Télécharger la **dernière version**, et non la LTS
-3. Installer
-
-![Installation de NodeJs](./docs/images/nodejs.png)
-
----
-
 ## .NET (dotNET)
 
 Installation simple & rapide de .NET (dot Net), **à voir si ça passe pour Mac et Linux**
@@ -53,6 +41,18 @@ Installation simple & rapide de .NET (dot Net), **à voir si ça passe pour Mac 
 3. Installer
 
 ![Installation de .NET](./docs/images/dotnet.png)
+
+---
+
+## 🟩 NodeJs & npm
+
+Installation simple & rapide de Node & npm pour l’ensemble des OS
+
+1. Se rendre sur le site officiel : [https://nodejs.org/](https://nodejs.org/)
+2. Télécharger la **dernière version**, et non la LTS
+3. Installer
+
+![Installation de NodeJs](./docs/images/nodejs.png)
 
 ---
 

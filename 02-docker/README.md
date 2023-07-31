@@ -2,7 +2,24 @@
 
 Permet de faire de la conteneurisation en local.
 
-Edit 2023 : Lien recommandé dans le terminal > [Docker Desktop WSL 2 backend on Windows](https://docs.docker.com/desktop/windows/wsl/), mais l'édit de 2021 suffit à priori.
+Edit 2023 :
+
+1. Doc officielle > [Docker Desktop WSL 2 backend on Windows](https://docs.docker.com/desktop/windows/wsl/).
+2. ♻️ Lancer Windows Update avant, complètement, plusieurs fois
+3. <span style="color: red;">Suivre les pré-requis !</span>
+4. 🚨 Activer la virtualisation (cf. en bas de cette doc en image)
+   1. Windows > Paramètres > Applications et fonctionnalités > Programmes et fonctionnalités > Actier ou désactiver les fonctionnalités windows
+   2. S'assurer que les fonctionnalités suivantes soient activées :
+      1. .NET (les deux)
+      2. ~conteneurs
+      3. Plateforme de l'hyperviseur Windows
+      4. Plateforme de machine virtuelle
+      5. Sous-système Windows pour Linux
+      6. Windows Powershell 2.0
+   3. Redémarrer
+   4. Si besoin, vérifier dans le BIOS que cela n'est pas désactivé
+
+---
 
 **Attention** : Même si maintenant c'est rarement un problème, vérifier que vous avez quelques Go de disponibles sur le disque d'installation.
 
@@ -134,6 +151,34 @@ Au pire essayer de le lancer en tant qu'admin.
 
 ---
 
+### Vérifier que WSL tourne bien sous la version 2
+
+🔍 [doc](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+Et non la 1
+
+🚨 À exécuter depuis **Powershell** (et non WSL), en <span style="color: red;">mode administrateur</span>.
+
+```bash
+# Vérifier la version utilisée
+wsl -l -v
+
+# Changer la version par défaut à installer pour la 2
+wsl --set-default-version 2
+
+# SSI vous tournez sous la version 1, il faut éventuellement vérifier que la 2 est bein installée avant de changer
+#     Par défaut : Ubuntu
+wsl --install
+
+# Changer la distro utilisée par la commande wsl
+wsl --setdefault Ubuntu
+
+## 🎉 Si ça ne fonctionne toujours pas, forcer l'upgrade
+wsl --set-version Ubuntu 2
+```
+
+---
+
 ### ♻️✨ Au pire réinstaller
 
 1. Gestionnaire de tâche > Fin de tâche pour docker desktop ET son service
@@ -143,3 +188,9 @@ Au pire essayer de le lancer en tant qu'admin.
 Ne pas oublier de prier RNGesus 🙏
 
 ![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/rngesus.png)
+
+---
+
+### Autres pistes de l'ancien temps
+
+A [voir ici](https://github.com/youpiwaza/server-related-tutorials/blob/master/01-docker/01-Docker-desktop/docker%20crash%20on%20boot.md).
