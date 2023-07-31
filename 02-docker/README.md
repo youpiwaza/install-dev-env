@@ -191,6 +191,18 @@ Ne pas oublier de prier RNGesus 🙏
 
 ---
 
+### Problème de connexion entre WLS et le démon Docker
+
+Dans le terminal WLS
+
+```bash
+export DOCKER_HOST=tcp://localhost:2375
+echo "Docker Host is set to ${DOCKER_HOST}"
+# Vérifications
+docker info
+docker run hello-world
+```
+
 ### Autres pistes de l'ancien temps
 
 A [voir ici](https://github.com/youpiwaza/server-related-tutorials/blob/master/01-docker/01-Docker-desktop/docker%20crash%20on%20boot.md).
