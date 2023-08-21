@@ -16,7 +16,7 @@ Pas besoin pour Mac & Linux.
 
 ---
 
-📝 Note : WSL <span style="color: red;">doit</span> avoir une version de linux installée <span style="color: red;">avant</span> afin de pouvoir tourner, ici Ubuntu.
+📝 Note : WSL 🚨doit🚨 avoir une version de linux installée 🚨avant🚨 afin de pouvoir tourner, ici Ubuntu.
 
 ---
 
@@ -51,7 +51,7 @@ Installer *WSL via le MS Store*
 Voici les opérations résumées à partir des repos officiels
 
 - Terminal > clic droit sur la barre du haut > Propriétés > (Options) > ✅ Utiliser `Ctrl` + `Shift` + `C`/`V` pour copier coller (cela évite les clics droit).
-- <span style="color: red;">Pré-installation des</span> [polices reco pour le thème](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+- 🚨Pré-installation des [polices🚨 reco pour le thème](https://github.com/romkatv/powerlevel10k#manual-font-installation)
   - Télécharger & installer de manière classique (clic droit > installer).
   - Redémarrer le terminal
   - Terminal > clic droit sur la barre du haut > Propriétés > Police > MesloLGS.

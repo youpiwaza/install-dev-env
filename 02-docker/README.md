@@ -6,7 +6,7 @@ Edit 2023 :
 
 1. Doc officielle > [Docker Desktop WSL 2 backend on Windows](https://docs.docker.com/desktop/windows/wsl/).
 2. ♻️ Lancer Windows Update avant, complètement, plusieurs fois
-3. <span style="color: red;">Suivre les pré-requis !</span>
+3. 🚨🚨🚨Suivre les pré-requis !
 4. 🚨 Attention, docker est assez gourmand (notamment après avoir téléchargé plusieurs images), la recommandation est d'avoir ~20Go de disponible.
 5. 🚨 Activer la virtualisation *(cf. en bas de cette doc en image)*
    1. Windows > Paramètres > Applications et fonctionnalités > Programmes et fonctionnalités > Actier ou désactiver les fonctionnalités windows
@@ -17,7 +17,7 @@ Edit 2023 :
       4. Plateforme de machine virtuelle
       5. Sous-système Windows pour Linux
       6. Windows Powershell 2.0
-   3. <span style="color: red;">Redémarrer</span>
+   3. 🚨Redémarrer🚨
    4. 🚨 Si besoin, vérifier dans le BIOS que cela n'est pas désactivé
 
 ---
@@ -143,7 +143,7 @@ S'assurer que les fonctionnalités windows suivantes sont activées :
 5. (Sous système Windwos pour Linux, si déjà installé)
 6. Windows Powershell 2.0
 
-🚨 <span style="color: red;">En cas de changement, redémarrer !</span>
+🚨 En cas de changement, redémarrer !🚨
 
 ---
 
@@ -202,7 +202,7 @@ Attention, docker est assez gourmand (notamment après avoir téléchargé plusi
 
 Et non la 1
 
-🚨 À exécuter depuis **Powershell** (et non WSL), en <span style="color: red;">mode administrateur</span>.
+🚨 À exécuter depuis **Powershell** (et non WSL), en 🚨mode administrateur🚨.
 
 ```bash
 # Vérifier la version utilisée
