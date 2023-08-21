@@ -9,12 +9,12 @@ Mac et linux > Potentiellement pas besoin d'installer certains logiciels may ré
 Comprend :
 
 1. .NET
-2. 🟩 NodeJs & npm
-3. 🐧 Un terminal "propre" / WSL2
-4. 🐳 Docker via Docker Desktop
-5. 🤖 Ansible
-6. 🖥️ L'éditeur de code VSCode
-7. ⬆️ Les mises à jour
+2. ⬆️ Mises à jour du système d'exploitation
+3. 🟩 NodeJs & npm
+4. 🐧 Un terminal "propre" / WSL2
+5. 🐳 Docker via Docker Desktop
+6. 🤖 Ansible
+7. 🖥️ L'éditeur de code VSCode
 8. ♻️ La maintenance
 
 ---
@@ -41,6 +41,21 @@ Installation simple & rapide de .NET (dot Net), **à voir si ça passe pour Mac 
 3. Installer
 
 ![Installation de .NET](./docs/images/dotnet.png)
+
+---
+
+## ⬆️ Mises à jour du système d'exploitation
+
+🚨 Optionnel mais recommandé, et prendre l’habitude ♻️
+
+1. Windows
+   1. Démarrer > "Update" > Relancer plein de fois
+2. [Mac](https://support.apple.com/fr-fr/HT201541)
+3. Linux > [Mes recos (pour WSL, reprendre les commandes de maintenance)](https://github.com/youpiwaza/install-dev-env/blob/master/01-terminal/README.md)
+
+### ✨ Bonus / Mise à jour des drivers en vrai
+
+Tous les drivers > [Logiciel Mes drivers](https://www.touslesdrivers.com/index.php?v_page=29)
 
 ---
 

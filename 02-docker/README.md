@@ -7,7 +7,8 @@ Edit 2023 :
 1. Doc officielle > [Docker Desktop WSL 2 backend on Windows](https://docs.docker.com/desktop/windows/wsl/).
 2. ♻️ Lancer Windows Update avant, complètement, plusieurs fois
 3. <span style="color: red;">Suivre les pré-requis !</span>
-4. 🚨 Activer la virtualisation (cf. en bas de cette doc en image)
+4. 🚨 Attention, docker est assez gourmand (notamment après avoir téléchargé plusieurs images), la recommandation est d'avoir ~20Go de disponible.
+5. 🚨 Activer la virtualisation *(cf. en bas de cette doc en image)*
    1. Windows > Paramètres > Applications et fonctionnalités > Programmes et fonctionnalités > Actier ou désactiver les fonctionnalités windows
    2. S'assurer que les fonctionnalités suivantes soient activées :
       1. .NET (les deux)
@@ -16,8 +17,8 @@ Edit 2023 :
       4. Plateforme de machine virtuelle
       5. Sous-système Windows pour Linux
       6. Windows Powershell 2.0
-   3. Redémarrer
-   4. Si besoin, vérifier dans le BIOS que cela n'est pas désactivé
+   3. <span style="color: red;">Redémarrer</span>
+   4. 🚨 Si besoin, vérifier dans le BIOS que cela n'est pas désactivé
 
 ---
 
@@ -111,10 +112,12 @@ docker system prune -af
 ```
 
 ---
+---
+---
 
 ## 🐛 Problèmes rencontrés
 
-### Docker desktop ne démarre pas
+### 🚦 Docker desktop ne démarre pas
 
 Potentiellement lié au fait que le service est désactivé dans les réglages de démarrage
 
@@ -127,9 +130,22 @@ Au pire essayer de le lancer en tant qu'admin.
 
 ---
 
-#### Vérifier que "Hyper-V" est activé
+### 🔧 Activer la virtualisation / Vérifier que "Hyper-V" est activé
 
-🔍 [yay](https://collabnix.com/error-docker-failed-to-start-docker-desktop-for-windows/#:~:text=You%20can%20try%20reinstalling%20Docker,attempting%20to%20start%20Docker%20again.)
+🔍 [Doc : résolution des problèmes au cas où docker desktop ne démarre pas](https://collabnix.com/error-docker-failed-to-start-docker-desktop-for-windows/#:~:text=You%20can%20try%20reinstalling%20Docker,attempting%20to%20start%20Docker%20again.)
+
+S'assurer que les fonctionnalités windows suivantes sont activées :
+
+1. .NET 3.5
+2. .NET 4.8
+3. Plateforme de l'hyperviseur Windows
+4. Plateforme de machine virtuelle
+5. (Sous système Windwos pour Linux, si déjà installé)
+6. Windows Powershell 2.0
+
+🚨 <span style="color: red;">En cas de changement, redémarrer !</span>
+
+---
 
 ![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-01.png)
 
@@ -150,8 +166,37 @@ Au pire essayer de le lancer en tant qu'admin.
 ![fix hyper v](../docs/images/docker/fix-enable-Hyper-V/docker-fix--enable-Hyper-V-05.png)
 
 ---
+---
+---
 
-### Vérifier que WSL tourne bien sous la version 2
+#### 🔧 Vérifier que cela n'est pas désactivé dans le BIOS
+
+1. Voir sur le net comment rentrer dans le BIOS de son PC au redémarrage
+   1. Assez souvent c'est en spam d'une touche entre F1 & F12 au démarrage
+   2. Ou sinon une activation dans un logiciel dédié du constructeur, pour le prochain redémarrage
+2. Dans le BIOS
+   1. **Souvent** dans `Advanced BIOS Features` et/ou pas loin des options du `CPU`
+3. 🔍👴 Un [article en ligne](https://support.bluestacks.com/hc/fr-fr/articles/115003910391--Comment-puis-je-activer-la-virtualisation-VT-sur-mon-PC) avec plus de détails
+
+Avec une capture honteusement volée car je n'ai pas l'option sur mon pc :3
+
+![BIOS > Virtualisation enabled](../docs/images/docker/bios-virtualisation.png)
+
+---
+---
+---
+
+### 🤢 Docker > read only file system
+
+Plus de place sur le disque dur !
+
+Attention, docker est assez gourmand (notamment après avoir téléchargé plusieurs images), la recommandation est d'avoir ~20Go de disponible.
+
+---
+---
+---
+
+### ⬆️ Vérifier que WSL tourne bien sous la version 2
 
 🔍 [doc](https://learn.microsoft.com/en-us/windows/wsl/install)
 
@@ -178,6 +223,8 @@ wsl --set-version Ubuntu 2
 ```
 
 ---
+---
+---
 
 ### ♻️✨ Au pire réinstaller
 
@@ -191,7 +238,53 @@ Ne pas oublier de prier RNGesus 🙏
 
 ---
 
-### Problème de connexion entre WLS et le démon Docker
+#### 🧠💥 Impossible de désinstaller/réinstaller
+
+Parfois lorsque Docker desktop est désinstallé (via Programmes & fonctionnalités), il n'est pas considéré comme tel par l'installeur qui refuse de ré-installer / réparer.
+
+Dans ce cas appliquer le plan 🔥 total wipeout 🔥 :
+
+1. Pour le fun, re-désinstaller de manière classique
+   1. Demarrer > Programmes & fonctionnalités > Docker desktop > Désinstaller
+2. Désactiver les process dans gestionnaire de tâches ET désactiver les services au démarrage
+   1. Ouvrir le gestionnaire des tâches > `Ctrl` + `Alt` + `Echap`
+      1. Onglet Processus > Docker desktop > clic droit > Fin de tâche
+      2. Onglet démarrage > Docker Desktop > Désactiver
+   2. Redémarrer
+3. Supprimer dans `Program Files`
+   1. Si le fichier est encore en cours d'utilisation, passer par le soft [Unlock it](https://emcosoftware.com/unlock-it/download)
+4. Virer le dossier caché DANS /appData
+   1. Ouvrir un explorateur de fichier
+      1. Affichage > **Eléments masqués** doit être coché
+      2. Aller dans `C:\Utilisateurs\TON_BLAZ\AppData\Local`
+      3. Virer Docker & Docker Desktop
+5. Virer entrées dans le registre avec [ccleaner](https://www.ccleaner.com/fr-fr/ccleaner/download) ou [💸 system mechanic](https://www.iolo.com/)
+6. Redémarrer
+7. Relancer l'installation
+   1. Si toujours KO, au choix
+      1. brûler le PC courant et en racheter un
+      2. changer de métier/pays
+      3. Formater le disque
+
+---
+
+🔥 *Virer les fichiers dans AppData*
+
+![Virer les fichiers dans AppData / Afficher les fichiers cachés](../docs/images/docker/fichiers-caches.png)
+
+---
+
+![Virer les fichiers dans AppData / Accéder à AppData](../docs/images/docker/AppData.png)
+
+---
+
+![Virer les fichiers dans AppData / Virer Docker & ses potes](../docs/images/docker/virer-docker.png)
+
+---
+---
+---
+
+### 🔌❌ Problème de connexion entre WLS et le démon Docker
 
 Dans le terminal WLS
 
@@ -203,6 +296,10 @@ docker info
 docker run hello-world
 ```
 
-### Autres pistes de l'ancien temps
+---
+---
+---
+
+### 👴 Autres pistes de l'ancien temps
 
 A [voir ici](https://github.com/youpiwaza/server-related-tutorials/blob/master/01-docker/01-Docker-desktop/docker%20crash%20on%20boot.md).

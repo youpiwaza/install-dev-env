@@ -8,29 +8,50 @@ Installation des thèmes zsh & OMZ & p10K ainsi que leurs pré-requis.
 
 ## 🐧 WSL2 > Ubuntu LTS pour windows 10
 
-1. [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about)
+Le terminal que je recommande d'utiliser pour Windows, [Kwaksé](https://docs.microsoft.com/fr-fr/windows/wsl/about).
 
-Passer par le microsoft store > WSL
+Permet d'avoir un "vrai" système de fichier (~vire le bullshit `CRLF`, les droits & permissions, etc.) sur Windows, sans machine virtuelle.
 
-Le terminal que je recommande d'utiliser pour Windows
+Pas besoin pour Mac & Linux.
 
-Pas besoin pour Mac & Linux
+---
+
+📝 Note : WSL <span style="color: red;">doit</span> avoir une version de linux installée <span style="color: red;">avant</span> afin de pouvoir tourner, ici Ubuntu.
+
+---
+
+Passer par le microsoft store > Ubuntu, **puis** WSL.
+
+---
 
 1. Démarrer > Microsoft store
-2. "WSL" ou "Windows Subsystem for Linux"
-3. Télécharger
-4. Installer
+2. "Ubuntu", sans version afin d’avoir la dernière
+3. Télécharger & installer
+4. "WSL" ou "Windows Subsystem for Linux"
+5. Télécharger & installer
+
+---
+
+Installer *Ubuntu via le MS Store*
+
+![Comment installer Ubuntu sur Windows](../docs/images/ms-store-ubuntu.png)
+
+---
+
+Installer *WSL via le MS Store*
 
 ![Comment installer WSL2 sur Windows](../docs/images/wsl.png)
 
+---
+---
 ---
 
 ### 🔧 Configuration manuelle
 
 Voici les opérations résumées à partir des repos officiels
 
-- Terminal > clic droit sur la barre du haut > Propriétés > (Options) > ✅ Utiliser Ctrl + Shift + C/V pour copier coller (cela évite les clics droit).
-- Pré-installation des [polices reco pour le thème](https://github.com/romkatv/powerlevel10k#manual-font-installation)
+- Terminal > clic droit sur la barre du haut > Propriétés > (Options) > ✅ Utiliser `Ctrl` + `Shift` + `C`/`V` pour copier coller (cela évite les clics droit).
+- <span style="color: red;">Pré-installation des</span> [polices reco pour le thème](https://github.com/romkatv/powerlevel10k#manual-font-installation)
   - Télécharger & installer de manière classique (clic droit > installer).
   - Redémarrer le terminal
   - Terminal > clic droit sur la barre du haut > Propriétés > Police > MesloLGS.
@@ -39,6 +60,46 @@ Voici les opérations résumées à partir des repos officiels
 - Changement automatique des couleurs pour [solarized dark](https://github.com/youpiwaza/backup-solarized-dark-for-wsl) (~maj des registres en RGB).
   - Cloner, lancer `install.vbs`, relancer le terminal.
 
+---
+
+#### 👶🗚 Pas à pas installation de la police pour le terminal
+
+01 / Probleme rencontré : symboles non affichés
+
+![Probleme rencontré : symboles non affichés](../docs/images/terminal/installer-police-terminal-MesLog/01-probleme-rencontre-symboles-non-affiches.png)
+
+---
+
+02 / Télécharger la police
+
+![Télécharger la police](../docs/images/terminal/installer-police-terminal-MesLog/02-telecharger-la-police.png)
+
+---
+
+03 / Installer la police
+
+![Comment installer WSL2 sur Windows](../docs/images/terminal/installer-police-terminal-MesLog/03-installer-la-police.png)
+
+---
+
+04 / WSL > Propriétés
+
+![WSL > Propriétés](../docs/images/terminal/installer-police-terminal-MesLog/04-wsl-proprietes.png)
+
+---
+
+05 / WSL > Utiliser la police
+
+![WSL > Utiliser la police](../docs/images/terminal/installer-police-terminal-MesLog/05-wsl-utiliser-la-police.png)
+
+---
+
+06 / Test > `p10k configure` > is ok
+
+![Test > p10k configure > is ok](../docs/images/terminal/installer-police-terminal-MesLog/06-profit.png)
+
+---
+---
 ---
 
 ### 📝 Quelques commandes de terminal usuelles, sous linux
