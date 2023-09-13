@@ -14,3 +14,34 @@ curl https://raw.githubusercontent.com/youpiwaza/install-ansible-script/master/a
 # Vérification
 ansible --version
 ```
+
+---
+
+## Ressource pour MAC
+
+Avec ~pip / brew, voir [Install Ansible on Mac OSX](https://hvops.com/articles/ansible-mac-osx/).
+
+Choisir **l'une** des méthodes
+
+### Avec homebrew
+
+```bash
+brew install ansible
+```
+
+### Avec homebrew
+
+```bash
+brew install ansible
+```
+
+### Avec pip
+
+```bash
+# Install Xcode
+sudo easy_install pip
+sudo pip install ansible --quiet
+
+# pour mettre à jour
+sudo pip install ansible --upgrade
+```
