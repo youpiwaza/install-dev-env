@@ -225,12 +225,17 @@ Comprend l'installation d'*Ansible* 🤖 dont l'installation à besoin.
 # rm ~.zsh*
 
 ## Script auto, comprend l'installation d'ansible (mais merde un peu donc on refait au propre le reste ci-dessous)
-curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
+## curl https://raw.githubusercontent.com/viasite-ansible/ansible-role-zsh/master/install.sh | bash
+## Maj 2023
+sudo apt install ansible
+sudo apt install zsh
+
 
 
 ## Terminal Oh My Zsh, installation officielle / https://github.com/ohmyzsh/ohmyzsh#basic-installation
 # OMZ > curl install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 
 
 ## Theme powerlevel10k official installation for OMZ / https://github.com/romkatv/powerlevel10k#oh-my-zsh
@@ -294,7 +299,7 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/VOTRE_UTI
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Installation des dépendances & des recos
-sudo apt-get install build-essential
+sudo apt install build-essential
 brew install gcc
 
 # Installation du CLI github
