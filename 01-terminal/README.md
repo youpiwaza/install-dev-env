@@ -199,6 +199,42 @@ Redémarrer WSL2 (fermer & rouvrir le terminal)
 
 ---
 
+### ♻️ Maintenance
+
+[WSL2](https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm)
+
+cmd ou Powershell > run as admin
+
+```bash
+# Close all WSL terminals and run this to fully shut down WSL.
+## Notification > NON je ne veux pas redémarrer, pour le moment
+wsl.exe --shutdown
+
+# Replace WINDOWS_USER with your Windows user name. This is where Docker stores its VM file.
+cd C:\Users\WINDOWS_USER\AppData\Local\Docker\wsl\data\
+
+# Compact the Docker Desktop WSL VM file and you're done.
+# NOTE: This may not work with Windows Home edition (read below).
+optimize-vhd -Path .\ext4.vhdx -Mode full
+```
+
+Relancer docker desktop
+
+---
+
+🚨 Commande `optimize-vhd` non trouvée > Si sur Windows Home edition
+
+```bash
+# Replace Nick with your Windows user name.
+diskpart
+select vdisk file="C:\Users\Nick\AppData\local\Docker\wsl\data\ext4.vhdx"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+```
+
+---
+
 ### 🧹 Clear cache manuel
 
 ```bash
@@ -333,42 +369,6 @@ brew install gcc
 
 # Installation du CLI github
 brew install gh
-```
-
----
-
-## ♻️ Maintenance
-
-[WSL2](https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm)
-
-cmd ou Powershell > run as admin
-
-```bash
-# Close all WSL terminals and run this to fully shut down WSL.
-## Notification > NON je ne veux pas redémarrer, pour le moment
-wsl.exe --shutdown
-
-# Replace WINDOWS_USER with your Windows user name. This is where Docker stores its VM file.
-cd C:\Users\WINDOWS_USER\AppData\Local\Docker\wsl\data\
-
-# Compact the Docker Desktop WSL VM file and you're done.
-# NOTE: This may not work with Windows Home edition (read below).
-optimize-vhd -Path .\ext4.vhdx -Mode full
-```
-
-Relancer docker desktop
-
----
-
-🚨 Commande `optimize-vhd` non trouvée > Si sur Windows Home edition
-
-```bash
-# Replace Nick with your Windows user name.
-diskpart
-select vdisk file="C:\Users\Nick\AppData\local\Docker\wsl\data\ext4.vhdx"
-attach vdisk readonly
-compact vdisk
-detach vdisk
 ```
 
 ---
