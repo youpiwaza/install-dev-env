@@ -64,7 +64,7 @@ Tâches à *vérifier au moins une fois par semaine*, afin d'éviter un bordel p
 ```bash
 omz update
 # One liner, go triple click
-git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull && sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt -y clean && sudo apt -y autoremove && docker system prune -af && npm install -g npm@latest
+git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull && sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo apt -y clean && sudo apt -y autoremove && docker system prune -af && npm install -g npm@latest && sudo sh -c "/usr/bin/echo 3 > /proc/sys/vm/drop_caches" && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'
 ```
 
 - ⏳ Téléphone

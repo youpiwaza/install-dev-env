@@ -174,7 +174,9 @@ echo "test yarn: " && yarn --version
 
 ## Restreindre WSL2 en RAM
 
-[blah](https://youtu.be/idW-an99TAM?t=1515)
+- [blah](https://youtu.be/idW-an99TAM?t=1515)
+  - [nick 1](https://nickjanetakis.com/blog/reclaiming-tons-of-diskspace-by-compacting-your-docker-desktop-wsl-2-vm)
+- [nick 2](https://nickjanetakis.com/blog/3-gotchas-with-wsl-2-around-disk-space-memory-usage-and-performance#going-over-everything)
 
 ```bash
 nano /mnt/c/Users/WINDOWS_USER/.wslconfig
@@ -185,10 +187,31 @@ Y ajouter
 ```ini
 [wsl2]
 memory=6GB
+
+## Spécifier un chemin vers le dossier swap (mémoire virtuelle), reco SSD
+# swapFile=C:\\LE_CHEMING_VERS_TON_DOSSIER_SWAP\\wsl2-swap.vhdx
+## Ou désactiver le swap, mais peut causer des crash en cas d'OOM (random kill process)
+swap=0
+localhostForwarding=true
 ```
 
 Redémarrer WSL2 (fermer & rouvrir le terminal)
 
+---
+
+### 🧹 Clear cache manuel
+
+```bash
+## Nick's original > permission denied
+# sudo sh -c \"echo 3 >'/proc/sys/vm/drop_caches' && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'\"
+
+
+## SO Fix: https://unix.stackexchange.com/a/148442
+sudo sh -c "/usr/bin/echo 3 > /proc/sys/vm/drop_caches" && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'
+```
+
+---
+---
 ---
 
 ### (Optionnel) Switcher sur l'utilisateur root par défaut
@@ -205,7 +228,13 @@ ubuntu config --default-user root
 ubuntu2004 config --default-user root
 ```
 
-(Relancer le terminal WSL > Ubuntu)
+(Fermer le terminal WSL > Ubuntu)
+
+Powershell en admin > 
+
+```bash
+wsl.exe --shutdown
+```
 
 ---
 
@@ -329,6 +358,21 @@ optimize-vhd -Path .\ext4.vhdx -Mode full
 
 Relancer docker desktop
 
+---
+
+🚨 Commande `optimize-vhd` non trouvée > Si sur Windows Home edition
+
+```bash
+# Replace Nick with your Windows user name.
+diskpart
+select vdisk file="C:\Users\Nick\AppData\local\Docker\wsl\data\ext4.vhdx"
+attach vdisk readonly
+compact vdisk
+detach vdisk
+```
+
+---
+---
 ---
 
 ## 📝 Ressources
