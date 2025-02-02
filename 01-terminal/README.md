@@ -360,8 +360,9 @@ Installation du [CLI github](https://github.com/cli/cli), via [homebrew](https:/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Ajout au PATH
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/VOTRE_UTILISATEUR_WSL2/.profile
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+## echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/VOTRE_UTILISATEUR_WSL2/.profile
+## eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# > Plutôt suivre les recommandations / copiers/collers proposés en fin d'installation :)
 
 # Installation des dépendances & des recos
 sudo apt install build-essential
