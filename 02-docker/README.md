@@ -7,7 +7,7 @@ Edit 2023 :
 1. Doc officielle > [Docker Desktop WSL 2 backend on Windows](https://docs.docker.com/desktop/windows/wsl/).
 2. ♻️ Lancer Windows Update avant, complètement, plusieurs fois
 3. 🚨🚨🚨Suivre les pré-requis !
-4. 🚨 Attention, docker est assez gourmand (notamment après avoir téléchargé plusieurs images), la recommandation est d'avoir ~20Go de disponible.
+4. 🚨 Attention, docker est assez gourmand (notamment après avoir téléchargé plusieurs images), la recommandation est d'avoir ~20Go d'espace sur le disque dur de disponible // Sinon cela peut entraîner des freezes / BSOD / Comportements aléatoires de windows !
 5. 🚨 Activer la virtualisation *(cf. en bas de cette doc en image)*
    1. Windows > Paramètres > Applications et fonctionnalités > Programmes et fonctionnalités > Actier ou désactiver les fonctionnalités windows
    2. S'assurer que les fonctionnalités suivantes soient activées :
