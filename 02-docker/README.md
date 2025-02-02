@@ -10,15 +10,16 @@ Edit 2023 :
 4. 🚨 Attention, docker est assez gourmand (notamment après avoir téléchargé plusieurs images), la recommandation est d'avoir ~20Go d'espace sur le disque dur de disponible // Sinon cela peut entraîner des freezes / BSOD / Comportements aléatoires de windows !
 5. 🚨 Activer la virtualisation *(cf. en bas de cette doc en image)*
    1. Windows > Paramètres > Applications et fonctionnalités > Programmes et fonctionnalités > Actier ou désactiver les fonctionnalités windows
-   2. S'assurer que les fonctionnalités suivantes soient activées :
+      1. Windows 11 > Système > Fonctionnalités facultatives > tout en bas > Plus de fonctionnalités Windows
+   3. S'assurer que les fonctionnalités suivantes soient activées :
       1. .NET (les deux)
       2. ~conteneurs
       3. Plateforme de l'hyperviseur Windows
       4. Plateforme de machine virtuelle
       5. Sous-système Windows pour Linux
       6. Windows Powershell 2.0
-   3. 🚨Redémarrer🚨
-   4. 🚨 Si besoin, vérifier dans le BIOS que cela n'est pas désactivé
+   4. 🚨Redémarrer🚨
+   5. 🚨 Si besoin, vérifier dans le BIOS que cela n'est pas désactivé
 
 ---
 
