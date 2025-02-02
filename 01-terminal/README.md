@@ -27,7 +27,7 @@ Passer par le microsoft store > Ubuntu, **puis** WSL.
 1. Démarrer > Microsoft store
 2. "Ubuntu", sans version afin d’avoir la dernière
 3. Télécharger & installer
-4. "WSL" ou "Windows Subsystem for Linux"
+4. "WSL" ou "Windows Subsystem for Linux" > la version 2
 5. Télécharger & installer
 
 ---
