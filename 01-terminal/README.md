@@ -134,7 +134,7 @@ sudo apt update && sudo apt --fix-broken install && sudo apt -y upgrade && sudo 
 
 ---
 
-### (Optionnel) Installation des paquets usuels
+### Installation des paquets usuels
 
 🔍 Doc sur l'[installation de paquets](https://doc.ubuntu-fr.org/tutoriel/comment_installer_un_paquet) : Préférer utiliser `apt install` plutôt que `apt-get install`, plus récent.
 
@@ -168,6 +168,27 @@ echo "test node: " && nodejs -v && \
 echo "test npm: " && npm -v && \
 echo "test python3: " && python3.11 --version && \
 echo "test yarn: " && yarn --version
+```
+
+---
+
+### Réinstallation de NodeJs avec le gestionnaire de version dédié (NVM / Node Version Manager)
+
+[Install Node.js on Windows Subsystem for Linux (WSL2)](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl)
+
+```bash
+sudo apt install curl
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+# (Redémarrer le terminal)
+
+# Vérification > doit afficher nvm
+command -v nvm
+
+# Installer la dernière version de node
+nvm install node
+
+# Utiliser la dernière version de node par défaut
+nvm use node && nvm alias default node
 ```
 
 ---
