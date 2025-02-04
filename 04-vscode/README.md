@@ -32,10 +32,11 @@ Désactivez/désinstallez ceux dont vous ne servez pas
 - Code Spell Checker
   - French - Code Spell Checker // Besoin reboot & activation
 - Color info
+- EditorConfig for VS Code // Prise en compte des fichiers de spécifications d'indentations, etc.
+- ESLint
 - 🚨 Github Copilot
   - [Démo fermée](https://copilot.github.com/)
   - Code partagé en vue d'amélioration, attention à la confidentialité
-- ESLint
 - Indent rainbow
 - Markdown all in one
 - Markdown preview enhanced
